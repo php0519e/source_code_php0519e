@@ -1,0 +1,11 @@
+div{
+	border-width: 1px;
+	border-color: green;
+	border-style: solid;
+	/*border: 1px solid red;*/
+	font-weight: bold;
+}
+p{
+	color: white;
+	background-color: black;
+}

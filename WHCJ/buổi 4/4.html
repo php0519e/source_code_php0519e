@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!--internal style-->
+	<style type="text/css">
+		p{
+			color: red;
+			font-family: arial;
+			font-size: 20px;
+			background-color: yellow;
+		}
+
+		p#block1{
+			color: white;
+		}
+
+		p#block2{
+			color: blue;
+		}
+
+		p.block3{
+			color: pink;
+		}
+
+		p.block{
+			border: 10px dotted green;
+			color: white;
+		}
+	</style>
+
+	<!--External style-->
+	<link rel="stylesheet" type="text/css" href="css/layout.css">
+</head>
+<body>
+	<div>Nội dung phần header.</div>
+		<!--inline style-->
+		<p id="block1">Nội dung khối thứ 1.</p>
+		<p class="block block3">Nội dung 2</p>
+		<p id="block2">Nội dung 3</p>
+		<p class="block">Nội dung 4.</p>
+		<div> Ngọc Ánh.</div>
+</body>
+ </html>
