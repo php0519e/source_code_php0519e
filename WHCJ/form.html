@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form trong HTML</title>
+
+	<style type="text/css">
+		label{
+			display: inline-block;
+			width: 120px;
+			margin-bottom: 20px;
+		}
+	</style>
+
+</head>
+<body>
+	<form action="proccess.php" method="get">
+		<label>Tên đăng nhập</label>
+		<input type="text" name="txtUser" value="thopn"><br>
+
+		<label>Mật khẩu</label>
+		<input type="password" name="txtPass"><br>
+
+		<label>Giới tính</label>
+		Nam <input type="radio" name="rbGender" value="1" checked>
+		Nữ	<input type="radio" name="rbGender" value="0"><br>
+
+		<label>Quê quán</label>
+		<textarea cols="50" rows="5"></textarea><br>
+
+		<label>Thành phố</label>
+		<select name="dlCity">
+			<option value="hn">Hà Nội</option>
+			<option value="dn">Đà Nẵng</option>
+			<option value="hcm" selected>Thành phố HCM</option>
+		</select><br>
+
+		<label>Sở thích</label>
+		Ngắm trời mưa<input type="checkbox" name="chkFav[]" value="1">
+		Ăn thịt chó<input type="checkbox" name="chkFav[]" value="2"  checked>
+		Chơi thể thao<input type="checkbox" name="chkFav[]" value="3">
+		<br>
+
+		<label></label>
+		<input type="submit" name="btnReg" value="Đăng ký">
+		<input type="reset" name="btnRes" value="Nhập lại">
+
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
