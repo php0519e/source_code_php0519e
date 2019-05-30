@@ -1,0 +1,30 @@
+p{
+	text-align: center;
+}
+
+div{
+	border: 5px solid blue;
+	padding: 10px;
+	text-align:center;
+	font-weight: bolder;
+	width: 50%;
+	margin-left: 350px;
+}
+
+p#p1{
+	background: white;
+	color: red;
+}
+
+p#p2{
+	background: aqua;
+	color: green
+}
+
+p.p3{
+	color: blue;
+	background: white;
+	border-bottom: grey dotted 5px;
+	height: 20px;
+	padding: 20px;
+}
