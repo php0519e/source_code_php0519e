@@ -1,0 +1,13 @@
+div{
+    text-align: center;
+    border-width: 1px;
+    border-color: green;
+    border-style: solid;
+/* border: 1px green solid;*/
+    font-weight: bold;
+}
+
+p{
+    background-color: green;
+    color: white;
+}
