@@ -1,0 +1,60 @@
+﻿<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Tạo tài khoản thành viên</h1> 
+    <p>Bạn đã là thành viên ?<a href="/login.html">Đăng nhập</a><p>tại đây</p><br>
+    <form action="register_proccess.php" method="POST">
+        <label>Địa chỉ Email*</label> <br>
+        <input type="text" name="txtEmail" placeholder="Vui lòng nhập tài khoản Email của bạn!"> <br>
+        <label>Mật khẩu*</label> <br>
+        <input type="password" name="txtPass" placeholder="Tối thiểu 6 kí tự bao gồm kí tự đặc biệt"> <br>      
+          <select name="cbDay" id="" >
+            <option value="0">Ngày</option>
+            <option value="1d">1</option>
+            <option value="2d">2</option>
+            <option value="3d">3</option>
+            <option value="4d">4</option>
+            <option value="5d">5</option>
+            <option value="6d">6</option>
+             </select>
+           <select name="cbMonth" id=""> 
+            <option value="0m">Tháng</option>
+            <option value="1m">January</option>
+            <option value="2m">February</option>
+            <option value="3m">March</option>
+            <option value="4m">April</option>
+            <option value="5m">May</option>
+            <option value="6m">June</option>
+             </select>   
+            <select name="cbYear" id="">
+            <option value="0y">Năm</option>
+            <option value="1y">2010</option>
+            <option value="2y">2011</option>
+            <option value="3y">2012</option>
+            <option value="4y">2013</option>
+            <option value="5y">2014</option>
+            <option value="6y">2016</option>
+            </select> <br>
+
+        <label>Giới tính</label> <br>
+        <select name="cbGender" id="">
+            <option value="2">Chọn</option>
+            <option value="1">Nam</option>
+            <option value="0">Nữ</option>
+        </select> <br>
+        <label>Tên*</label><br>
+        <input type="text"name="txtFullname" placeholder="Họ và Tên">
+        <br>
+        <input type="checkbox" name="chkSaleInfo" checked>Tôi muốn nhận thông tin khuyến mại của cửa hàng này <br>
+        <input type="submit" name="btnRegister" value="Đăng ký">
+        <p>hoặc đăng ký với :</p>
+        <input type="button" name="btnFacebook" value="FaceBook"> <br>
+        <input type="button" name="btnGoogle" value="Google">
+    </form>
+    </div>
+    
+</body>
+</html>
