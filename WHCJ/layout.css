@@ -1,0 +1,32 @@
+h1{
+	color: red;
+	text-align: center;
+}
+div{
+	text-align: justify;
+	margin: 25px;
+}
+#block1{
+	font-family: "Time new roman";
+	font-size: 18px;
+	
+}
+#block2{
+	font-family: tahoma;
+	font-size: 25px;
+}
+.class1{
+	font-style: italic;
+	color: blue;
+	background-color:  #d6d6c2;
+}
+.class2{
+	text-decoration: underline;
+	color: #ff9900;
+}
+.class3{
+	color: green;
+}
+.class4{
+	font-weight: bold; 
+}
