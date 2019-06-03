@@ -1,0 +1,33 @@
+body{
+	line-height: 25px;
+	text-align: justify;
+}
+
+h1{
+	color: red;
+	text-align: center;
+}
+p#block1{
+	color: blue;
+	background-color: rgb(204,204,204);
+	font-weight: bold;
+	font-style: italic;
+	}
+p#block2{
+	color: #ffaa56;
+	text-decoration: underline;
+
+}
+p#block3{
+		color: rgb(0,127,0);
+		font-size: 25px;
+		font-family: Tahoma;
+		font-weight: bold;
+}
+p#block4{
+		color: #ffaa56;
+		text-decoration: underline;
+}
+a{
+	text-decoration: none;
+}

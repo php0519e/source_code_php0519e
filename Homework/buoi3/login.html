@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<style type="text/css">
+	input#input1{
+	width: 20%;
+	height: 18px;
+}
+</style>
+<link rel="stylesheet" href="css_for_buoi3.css">
+<body >
+	<div>
+		<h2 style="font-family: bold">Chào mừng bạn đến với ABC-Crop.Đăng nhập ngay!</h2>
+		<br>Thành viên mới?<a href="register.html"><font style="color: violet">Đăng kí</font></a> tại đây.
+	</div>
+	<div >
+		<form action="login_proccess.php" method="post">
+			<label for="">Địa chỉ Email&#42</label><br>
+			<input type="text" name="txtEmail" placeholder="Vui lòng nhập email của bạn" id="input1"><br>
+
+			<label>Mật khẩu&#42</label><br>
+			<input type="password" name="txtPass" placeholder="Vui lòng nhập mật khẩu của bạn" id="input1"><br>
+
+			<a href="pass.html">Quên mật khẩu?</a><br>
+
+			<input type="submit" name="txtdn" value="Đăng nhập"><br>
+			Hoặc đăng nhập bằng:<br>
+			<input type="button" name="txtFacebook" value="Facebook"><br>
+			<input type="button" name="txtGoogle" value="Google">
+		</form>
+	</div>
+</body>
+</html>
