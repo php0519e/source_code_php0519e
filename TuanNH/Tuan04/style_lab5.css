@@ -1,0 +1,18 @@
+body {margin: 0px; padding: 0px;}
+.clearfix {clear: both;}
+.main {max-width: 800px; margin: 10px auto;}
+
+/* style for menu */
+ul.menu {margin: 0px; padding: 0px; list-style: none;}
+li {float: left; position: relative; border-right: 1px solid green;}
+li:last-child {border-right: none;}
+li > a {text-decoration: none; color: green; text-transform: uppercase; padding: 3px 5px; font-weight: bold;}
+
+/* style for content */
+.content > h1 {text-transform: uppercase; color: red; text-align: center;}
+.content p {text-align: justify;}
+div {margin-bottom: 25px;}
+.p_first {background-color: rgb(230,230,230);}
+.p_first p {color: blue; font-style: italic; font-weight: bold;}
+.p_second p, .p_fourth p {text-decoration: underline; color: orange;}
+.p_third {color: green; font-size: 25px; font-family: Tahoma;}

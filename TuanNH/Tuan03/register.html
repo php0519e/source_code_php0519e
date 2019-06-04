@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Đăng kí</title>
+</head>
+<body>
+<div class="main">
+	<h1>Tạo tài khoản thành viên</h1>
+	<p>Bạn đã là thành viên? <a href="login.html">Đăng nhập</a> tại đây</p>
+
+	<form action="register_proccess.php" method="GET">
+		<table>
+			<tr>
+				<td><label for="txtEmail">Địa chỉ Email</label></td>
+				<td><input type="text" name="txtEmail" placeholder="Vui lòng nhập email của bạn"></td>
+			</tr>
+			<tr>
+				<td><label for="txtPassword">Mật khẩu *</label></td>
+				<td><input type="password" name="txtPassword" placeholder="Tối thiểu 6 kí tự bao gồm cả số và chữ" min="6"></td>
+			</tr>
+			<tr>
+				<td><label for="txtBirthday">Ngày sinh</label></td>
+				<td><input type="date" name="txtBirthday"></td>
+			</tr>
+			<tr>
+				<td><label for="cbGender">Giới tính</label></td>
+				<td>
+					<select name="cbGender[]">
+						<option value="male">Nam</option>
+						<option value="female">Nữ</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label for="txtName">Họ và tên *</label></td>
+				<td><input type="text" name="txtName" placeholder="Họ và tên"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="checkbox" name="chkSaleInfo"> <label> Tôi muốn nhận thông tin khuyến mại từ cửa hàng</label>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" name="btnRegister" value="Đăng ký"> Đăng ký</td>
+			</tr>
+			<tr>
+				<td colspan="2"><label>Hoặc đăng ký với:</label></td>
+			</tr>
+			<tr>
+				<td><input type="button" name="btnFacebook" value="Facebook"> Facebook</td>
+				<td><input type="button" name="btnGoogle" value="Google"> Google</td>
+			</tr>
+		</table>
+	</form>
+</div>
+</body>
+</html>
