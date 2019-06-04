@@ -1,0 +1,16 @@
+div#block1{
+	color: red;
+	text-align: justify;
+	text-decoration: underline;
+	text-indent: unset;
+	text-transform: uppercase;
+	word-spacing: 10px;
+	font-style: italic;
+}
+div#block2{
+	color: rgb(0,150,0);
+	text-align: center;
+	text-decoration: underline;
+
+
+}

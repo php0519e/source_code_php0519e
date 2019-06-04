@@ -1,7 +1,19 @@
 body{
 	line-height: 25px;
 	text-align: justify;
+	word-spacing: 10px;
+	background-color: #E2EDF9;
+	border-style: solid ;
+	background-repeat: no-repeat;
+	border-top-color: yellow;
+	border-bottom-color: red;
+	border-left-color: black;
+	border-right-color: blue;
+	border-width: 5px;
+	border-top-left-radius: 100px;
+	border-top-right-radius: 20px;
 }
+
 
 h1{
 	color: red;
@@ -9,9 +21,10 @@ h1{
 }
 p#block1{
 	color: blue;
-	background-color: rgb(204,204,204);
+	background-color: #E2EDF9;
 	font-weight: bold;
 	font-style: italic;
+	border: 10px dotted #FFF;
 	}
 p#block2{
 	color: #ffaa56;
@@ -19,7 +32,7 @@ p#block2{
 
 }
 p#block3{
-		color: rgb(0,127,0);
+		color: #1FFF00;
 		font-size: 25px;
 		font-family: Tahoma;
 		font-weight: bold;
