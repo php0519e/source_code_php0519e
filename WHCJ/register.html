@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>BTVN3.1</title>
+</head>
+<body bgcolor="lavender">
+	<h1><p>Tạo tài khoản thành viên</p></h1><br>
+	<font size="4" face="time new roman">
+	<form action="process.php" method="get">
+		Bạn đã là thành viên? <a href="login.html"> Đăng nhập </a> tại đây. <br>
+
+	<table bgcolor="#fffff" width="100%">
+		<td>
+		<label>Địa chỉ Email *: </label><br>
+		<input type="email" name="txtEmail" required placeholder="Vui lòng nhập email của bạn."><br>
+
+		<label>Mật khẩu *:</label><br>
+		<input type="password" name="txtPass" required placeholder="Tối thiểu 6 ký tự bao gồm chữ và số."><br>
+
+		<label>Ngày/Tháng/Năm sinh:<br>
+			<select name="cbDay">
+				<option>Ngày</option>
+				<option>1</option>
+				<option>7</option>
+				<option>14</option>
+				<option>24</option>
+				<option>30</option>
+			</select>
+			<select name="cbMonth">
+				<option>Tháng</option>
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+			</select>
+			<select name="cbYear">
+				<option>Năm</option>
+				<option>1996</option>
+				<option>1997</option>
+				<option>1998</option>
+				<option>1999</option>
+			</select>
+		</label><br>
+
+		<label>Giới tính:<br>
+			<select name="cbGender">
+				<option>Chọn</option>
+				<option>Nam</option>
+				<option>Nữ</option>
+				<option>Khác</option>
+			</select>
+		</label><br>
+
+		<label>Tên*:</label><br>
+		<input type="text" name="txtFullname" required placeholder="Họ và tên"><br>
+
+		<input type="checkbox" name="chkSaleInfo" required>Tôi muốn nhận thông tin khuyến mãi từ cửa hàng.<br>
+
+		<label></label>
+		<input type="submit" name="btnRegister" value="Đăng ký"><br>
+		Hoặc đăng ký với: <br>
+		<input type="button" name="btnFacebook" value="Facebook"><br>
+		<input type="button" name="btnGoogle" value="Google">
+	</td></form></font></table>
+</body>
+</html>
