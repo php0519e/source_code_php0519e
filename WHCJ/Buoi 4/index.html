@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>                       <!-- font-family Thiết lập kiểu chữ -->
+	<meta charset="UTF-8">   <!-- font-size Thiết lập kích cỡ chữ -->
+	<title></title>          <!-- font-weight Thiết lập sự tô đậm của chữ -->
+	<!--Internal style -->   <!-- font-style Thiết lập sự in nghiêng của chữ -->
+	<style type="text/css">  
+		p{
+			color: red;                
+			font-family: arial;
+			font-size: 20px;
+			background-color: yellow;
+		}
+
+		p#block1{
+			color: green;
+		}
+		p#block2{
+			color: blue;
+		}
+
+		.block3{color: black;
+			
+		}
+
+		p.block{
+			border: 10px dotted green;
+		}
+	</style>
+
+	<!--External style-->
+	<!-- <link rel="stylesheet" type="text/css" href="css/layout.css"> -->
+</head>
+<body>
+	<div>Nội dung phần Header</div>
+
+	<!--Inline style -->
+	<p id="block1">Nội dung khối thứ nhất</p>
+	<p class="block block3">Nội dung khối thứ hai</p>
+	<p id="block2">Nội dung khối thứ ba</p>
+    <p class="block">Nội dung khối thứ tư</p>
+
+	<div>Nội dung phần Footer</div>
+</body>
+</html>

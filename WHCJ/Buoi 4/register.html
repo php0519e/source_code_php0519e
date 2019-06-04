@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BT buoi 3.1</title>
+	<style type="text/css">
+		select{
+			border:1px solid black;
+            padding:5px; /* them khoang khong gian ben trong o */
+            background-color: lightgray;
+           
+		}
+		select:hover{
+			background-color: lightblue ;
+		}
+
+	</style>
+</head>
+<body>
+	<div>
+		<form action="register_process.php" method="get">
+		<header style="background-color: gray">
+
+		<h1> &nbsp <br>Tạo tài khoản thành viên</h1>
+		<p>Bạn đã là thành viên? <a href="login.html">Đăng nhập</a> tại đây <br>
+			<br>
+        </header>
+
+        <body>
+		   <laber>Địa chỉ Email*</laber> <br>
+           <input type="text" name="txtEmail" placeholder="Vui lòng nhập email của bạn"> <br><br>
+           <label>Mật khẩu*</label> <br>
+           <input type="password" name="txtPass" placeholder="Tối thiểu 6 kí tự bao gồm cả số và chữ"> <br> <br>
+           <label>Ngày/Tháng/Năm sinh</label> <br>
+           <select name="cbDay">
+           	    <option>Ngày</option>
+           	    <option value="1">1</option>
+           	    <option value="2">2</option>
+           	    <option value="3">3</option>
+           	    <option value="4">4</option>
+           	    <option value="5">5</option>
+           	    <option value="6">6</option>
+           	    <option value="7">7</option>
+           	    <option value="8">8</option>
+           	    <option value="9">9</option>
+           	    <option value="10">10</option>
+           	    <option value="11">11</option>
+           	    <option value="12">12</option>
+           	    <option value="13">13</option>
+           	    <option value="14">14</option>
+           	    <option value="15">15</option>
+           	    <option value="16">16</option>
+           	    <option value="17">17</option>
+           	    <option value="18">18</option>
+           	    <option value="19">19</option>
+           	    <option value="20">20</option>
+           	    <option value="21">21</option>
+           	    <option value="22">22</option>
+           	    <option value="23">23</option>
+           	    <option value="24">24</option>
+           	    <option value="25">25</option>
+           	    <option value="26">26</option>
+           	    <option value="27">27</option>
+           	    <option value="28">28</option>
+           	    <option value="29">29</option>
+           	    <option value="30">30</option>
+           </select>
+
+           <select name="cbMonth">
+           	    <option>Tháng</option>
+           	    <option value="1">1</option>
+           	    <option value="2">2</option>
+           	    <option value="3">3</option>
+           	    <option value="4">4</option>
+           	    <option value="5">5</option>
+           	    <option value="6">6</option>
+           	    <option value="7">7</option>
+           	    <option value="8">8</option>
+           	    <option value="9">9</option>
+           	    <option value="10">10</option>
+           	    <option value="11">11</option>
+           	    <option value="12">12</option>
+           </select>
+
+           <select name="cbYear">
+           	    <option>Năm sinh</option>
+                <option value="0">1990</option>
+                <option value="1">1991</option>
+                <option value="2">1992</option>
+                <option value="3">1993</option>
+                <option value="4">1994</option>
+                <option value="5">1995</option>
+                <option value="6">1996</option>
+                <option value="7">1997</option>
+                <option value="8">1998</option>
+                <option value="9">1999</option>
+                <option value="10">2000</option>
+           </select> <br><br>
+           <label>Giới tính</label><br>
+           <select name="cbGender">
+           	    <option>Chọn</option>
+           	    <option value="1">Nam</option>
+           	    <option value="2">Nữ</option>
+           </select> <br><br>
+
+           <label>Tên*</label><br>
+           <input type="text" name="txtFullname" placeholder="Họ và tên"><br><br>
+
+           <input type="checkbox" name="chkSaleInfo" checked="" value="1">Tôi muốn nhận thông tin khuyến mãi từ cửa hàng  <br>
+
+           <input type="submit" name="btnRegister" value="Đăng ký"> <br><br>
+           Hoặc đăng ký với: <br> 
+
+           <a href="https://www.facebook.com/"> <input type="button" name="btnFacebook" value="Facebook"></a> <br>
+
+           <a href="https://www.google.com.vn/"><input type="button" name="btnGoogle" value="Google"></a>
+
+		</p>
+		</body>
+
+		<footer style="background-color: gray">
+		     <p>&nbsp <br> &nbsp <br> &nbsp <br> &nbsp <br> &nbsp </p>
+		</footer>
+        </form>
+	</div>
+</body>
+</html>
