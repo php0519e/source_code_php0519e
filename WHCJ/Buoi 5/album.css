@@ -1,0 +1,24 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.main{
+	background-color: #ffff80;
+	border-color: red;
+	border: solid red;
+	margin: 20px auto 30%;
+	width: 350px;
+}
+ p{
+	text-align: center;
+	line-height: 50px;
+	height: 50px;
+}
+	border: solid 1px;
+	padding: 5px;
+
+}
+img{
+	width: 150px;
+	height: 150px;
+}
