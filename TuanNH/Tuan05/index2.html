@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bai tap buoi 5 - bai 2</title>
+	<style type="text/css">
+		* {margin: 0px; padding: 0px;}
+		a {text-decoration: none;}
+		.clearfix {clear: both;}
+		#container {width: 800px; margin: 0px auto;}
+
+		/* Style Header */
+		#header {height: 110px; overflow: hidden;}
+		#logo {width: 20%; float: left;}
+		#logo img{margin: 0px auto; max-width: 100%;}
+		#banner img {margin: 0px auto; max-width: 100%;}
+		#banner {width: 80%; float: left;}
+
+		/* Style Navigation */
+		#nav {height: 40px; background-color: green;}
+		ul#menu {margin: 0px; padding: 0px; list-style: none;}
+		ul#menu li {margin: 0px; padding: 0px; float: left;}
+		ul#menu li a {color: white; margin: 0px; padding: 11px; display: block;}
+
+		#left {float: left; width: 70%;}
+		#section {height: 400px; overflow: hidden;}
+
+		#article {height: 200px; border-top: 1px double gray;}
+		#article h3 {margin: 20px 0px; padding: 10px 0px; font-size: 28px;}
+
+		#aside {float: left; width: 30%; height: 400px;}
+		#aside h3 {margin: 20px 0px; font-size: 26px;}
+		.list-post ul {list-style: none; padding: 0px; margin: 0px 20px 0px;}
+
+		#footer {height: 110px; background-color: orange;}
+		p#policy {text-align: center; line-height: 110px;}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id="header">
+		<div class="clearfix"></div>
+		<div id="logo">
+			<img src="logo.png" alt="logo">
+		</div>
+		<div id="banner">
+			<img src="banner.png" alt="banner">
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div id="nav">
+		<ul id="menu">
+			<li><a href="#trangchu">Trang chủ</a></li>
+			<li><a href="#gioithieu">Giới thiệu</a></li>
+			<li><a href="#sanpham">Sản phẩm</a></li>
+			<li><a href="#tintuc">Tin tức</a></li>
+			<li><a href="#tuyendung">Tuyển dụng</a></li>
+			<li><a href="#dathangsanpham">Đặt hàng sản phẩm</a></li>
+			<li><a href="#dangkythuctap">Đăng ký thực tập</a></li>
+			<li><a href="#lienhe">Liên hệ</a></li>
+			<div class="clearfix"></div>
+		</ul>
+	</div>
+
+	<div id="content">
+		<div id="left">
+			<div id="section">
+				<img src="thumbnail.jpg" alt="thumbnail">
+			</div>
+			<div id="article">
+				<h3>Tuyển lập trình viên PHP</h3>
+				<p>TRUNG TÂM PHÁT TRIỂN PHẦN MỀM ITPLUS THÔNG BÁO TUYỂN HỌC VIÊN với đội ngũ giảng viên có nhiều kinh nghiệm tham gia các dự án thực tế trong lĩnh vực công nghệ thông tin, ... </p>
+			</div>
+		</div>
+		<div id="aside">
+			<h3>Bài viết mới</h3>
+			<div class="list-post">
+				<ul>
+					<li><a href="#">Bài viết 1</a></li>
+					<li><a href="#">Bài viết 2</a></li>
+					<li><a href="#">Bài viết 3</a></li>
+					<li><a href="#">Bài viết 4</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	
+	<div id="footer">
+		<p id="policy">@copyright; Bản quyền thuộc về ITPsoft - ITPlus Academy</p>
+	</div>
+</div>
+</body>
+</html>
