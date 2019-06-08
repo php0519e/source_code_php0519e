@@ -1,0 +1,95 @@
+*{
+    margin: 0 auto;
+}
+
+/*-----------------------------------------------------*/
+/*--------------------HEADER--------------------------*/
+/*-----------------------------------------------------*/
+#header{
+    height: 150px;
+    max-width: 2000px;
+ 
+}
+.logo{
+    float: left;
+    height:120px;
+    max-width: 350px;
+    margin: 5px 40px ;
+}
+h1{
+   
+    text-align: center;
+    margin: 50px 250px 20px auto;
+    color:#0000DD;
+}
+
+/*-----------------------------------------------------*/
+/*----------------------MENU-----------------------*/
+/*-----------------------------------------------------*/
+.menu{
+    height: 100px;
+}
+.menu ul {
+    list-style: none;
+    font-weight: bold;
+    background-color: blue;
+}
+
+/*-----ẩn cái li trong ul sản phẩm------*/
+.menu ul li ul{
+    display: none;
+}
+.menu ul li a:hover > ul{
+    display: block;
+}
+.menu ul li{
+    position: relative;
+    display: inline-table;
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+}
+.menu ul li a{
+    color: #f1f1f1;
+    text-decoration: none;
+    display: block;
+}
+
+/*-------------------------------------------*/
+/*----------------Border------------------*/
+/*-------------------------------------------*/
+#border #left{
+    width: 1200px;
+    height: 500px;
+    float: left;
+    background-color: rgb(156, 179, 247);
+}
+#border{
+    height: 700px;
+}
+#img1{
+    margin: 100px 300px 100px 300px ;
+    width: 600px;
+    height: 300px;
+    float: left;
+} 
+#border #right p{
+    text-align: center;
+}
+#border #left h1,p{
+    text-align: justify;
+}
+#border #right .id1{
+    text-align: center;
+    margin: 30px 50px 30px 50px;
+}
+/*-------------------------------------------*/
+/*----------------Footer------------------*/
+/*-------------------------------------------*/
+#footer{
+    text-align:center;
+    background-color:#494949;
+    color: white;
+    padding: 20px;;
+}
+

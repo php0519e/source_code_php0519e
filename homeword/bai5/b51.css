@@ -1,0 +1,42 @@
+*{
+    margin: 0px auto;
+}
+#header{
+    background-color: red;
+    text-align: justify;
+    text-align: center;
+    height: 110px;
+
+}
+#nav{
+    background-color: green;
+    text-align: center;
+    height: 40px;
+}
+#border{
+    text-align: center;
+    height: 400px;
+}
+#border #rborder{
+    width: 400px;
+    float: left;
+}
+#border #rborder #section{
+    height: 200px;
+    background-color: blue;
+}
+#border #artilce{
+    height: 400px;
+    background-color: gray;
+}
+#border #rborder #aside{
+    height: 200px;
+    background-color: black;
+    color: white;
+}
+
+#footer{
+    background-color: orange;
+    text-align: center;
+    height: 110px;
+}
