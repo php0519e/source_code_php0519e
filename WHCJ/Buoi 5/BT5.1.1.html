@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BT ki thuat tao menu</title>
+	<style type="text/css">
+		.nav{
+			width: 100%;
+		}
+		.nav ul {
+			list-style: none;
+			padding: 0px;
+			margin: 0px;
+		}
+		.nav ul li ul{
+			width: 100%;
+			display: none;
+		}
+		.nav ul li:hover >ul{
+			display: block;
+			width: 100%;
+		}
+		.nav ul li{
+			text-align: center;
+			width: 19.8%;
+			position: relative;
+			/* border: 1px solid red; */
+			display: inline-block;
+			background-color: lightgray;
+			float: left;
+		}
+		.nav ul li>ul{
+			position: absolute;
+			width: 100%;
+		}
+		.nav ul li>ul li{
+			width: 100%;
+		}
+		.nav ul li>ul li>ul{
+			top: 0;
+			width: 100%;
+			left: 100%;
+		}
+
+		.nav a{
+			text-decoration: none;
+			display: block;
+			padding: 5px 10px;
+		}
+		.nav a:hover{
+			background-color: blue;
+			color: white;
+		}
+		
+		
+	</style>
+</head>
+<body>
+	<div class="nav">
+		<ul>
+			<li><a href="">Trang chủ</a> </li>
+			<li><a href="">Giới Thiệu</a> </li>
+			<li><a href="">Sản phẩm Nam</a> 
+				<ul>
+					<li><a href="">Quần Nam</a> </li>
+					<li><a href="">Áo Nam</a> 
+						<ul>
+							<li><a href="">Áo Việt Nam</a> </li>
+							<li><a href="">Áo Trung Quốc</a></li>
+							<li><a href="">Áo Mỹ</a> </li>
+
+						</ul>
+					</li>
+					
+					<li><a href="">Ví Nam</a> </li>
+				</ul>
+			</li>
+			<li><a href="">Sản phẩm nữ</a> 
+				<ul>
+					<li><a href="">Áo Nữ</a> </li>
+			        <li><a href="">Quần Nữ</a> </li>
+			        <li><a href="">Ví Nữ</a> </li>
+				</ul>
+			</li>
+			<li><a href="">Liên hệ</a> </li>
+		</ul>
+    </div>
+</body>
+</html>
