@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu Đa Cấp Ngang</title>
+	<style type="text/css">
+		*{margin: 0px; padding: 0px}
+	#menu ul{
+		background: #d6d6c2;
+		list-style-type: none;
+		text-align: center;
+		
+	}
+	#menu ul li{
+		display:inline-table;
+		position: relative;
+		height: 40px;
+		line-height:40px;
+		width: 150px;
+		border: 1px white solid;
+	}
+	#menu a{
+		text-decoration: none;
+		display: block;
+	}
+	#menu a:hover{
+		background: blue;
+		color: white;
+		cursor: pointer;
+	}
+	#menu li> .menu1, .menu2{
+		position: absolute;
+		width: 100%;
+		display: none;
+	}
+	#menu li:hover .menu1{
+		display:block;	
+	}
+	
+	
+	#menu .menu1 li:hover .menu2{
+		display: block;
+		top: 0;
+		left:100%;
+	}
+	</style>
+</head>
+<body>
+	<div id="menu">
+		<ul >
+			<li><a href="#">Trang chủ</a></li>
+			<li><a href="#">Giới thiệu</a></li>
+			<li ><a href="#">Sản phẩm Nam</a>
+				<ul class="menu1">
+					<li><a href="#">Áo Nam</a>
+						<ul class="menu2">
+							<li><a href="#">Áo Việt Nam</a></li>
+							<li><a href="#">Áo Trung Quốc</a></li>
+							<li><a href="#">Áo Mỹ</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Quần Nam</a></li>
+					<li><a href="#">Ví Nam</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Sản phẩm Nữ</a>
+				<ul class="menu1">
+					<li><a href="#">Áo Nữ</a></li>
+					<li><a href="#">Quần Nữ</a></li>
+					<li><a href="#">Ví Nữ</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Liên hệ</a></li>
+		</ul>
+	</div>
+</body>
+</html>

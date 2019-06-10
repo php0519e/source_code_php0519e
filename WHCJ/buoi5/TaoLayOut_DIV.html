@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tạo Layout với phần tử DIV</title>
+	<style type="text/css" media="screen">
+		*{margin: 0;
+		padding: 0;}
+	div{
+		  color: white;
+		  width: 1000px;
+		  height:660px;
+		  
+		  
+		}
+		#div1{
+		  height: 110px;
+		  width:1000px;
+		  background: red;
+		  
+		}
+		#div2{
+		  height: 40px;
+		  width:1000px;
+		  background: green;
+		}
+		#div3{
+		  height:400px;
+		}
+		.section{
+		  background: blue;
+		  height: 200px;
+		  width:600px;
+		  float: left;
+		}
+		.artile{
+		  background: black;
+		  height: 200px;
+		  width:600px;
+		  float: left;
+		}
+		.aside{
+		  height: 400px;
+		  width:400px;
+		  background: gray;
+		  float: right;
+		  margin-top: -200px;
+		  
+		  }
+		#div4{
+		  background: orange;
+		  height: 110px;
+		}
+		.clear{
+		  clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div id="div1">
+		  Header
+		</div>
+		<div id="div2">
+		  Nav
+		</div>
+		<div id="div3">
+		  <div class="section">
+		    Section
+		  </div>
+		  <div class="artile">
+		    Artile 
+		  </div>
+		  <div class="aside">
+		    Aside 
+		  </div>
+		  <div class="clear"></div>
+		</div>
+		<div id="div4">
+		  Footer
+		</div>
+		
+	</div>
+</body>
+</html>
