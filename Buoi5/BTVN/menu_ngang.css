@@ -1,0 +1,61 @@
+* {
+    padding: 0;
+    margin: 0
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+a:hover {
+    background: #cd6133;
+}
+
+li {
+    display: inline-table;
+    height: 40px;
+    width: 140px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+    background: #ff793f;
+}
+
+/*Xử lý hiệu ứng */
+
+ul.spnam {
+    position: absolute;
+    display: none;
+}
+
+.lispnam:hover .spnam {
+    display: block;
+}
+
+ul.aonam {
+    position: absolute;
+    top: 0;
+    left: 140px;
+    display: none;
+}
+
+.liaonam:hover .aonam {
+    display: block;
+}
+
+ul.spnu {
+    position: absolute;
+    display: none;
+}
+
+.lispnu:hover .spnu {
+    display: block;
+}
