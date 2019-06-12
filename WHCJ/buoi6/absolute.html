@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Absolute</title>
+	<style type="text/css" media="screen">
+		*{margin: 0;
+			padding: 0;}
+		#container{
+			width: 320px;
+			height: 320px;
+			border: 2px solid black;
+			position: relative;
+		}
+		#div1{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 20px;
+			height: 20px;
+			background: red;
+		}
+		#div2{
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			width: 50px;
+			height: 50px;
+			background: blue;
+		}
+		#div3{
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 30px;
+			height: 30px;
+			background: green;
+
+		}
+		#div4{
+			position: absolute;
+			bottom: 0;
+			right: 30px;
+			width: 100px;
+			height: 100px;
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="div1">
+			1
+		</div>
+		<div id="div2">
+			2
+		</div>
+		<div id="div3">
+			3
+		</div>
+		<div id="div4">
+			4
+		</div>
+	</div>
+</body>
+</html>

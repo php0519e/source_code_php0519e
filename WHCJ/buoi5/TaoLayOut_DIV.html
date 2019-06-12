@@ -1,84 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tạo Layout với phần tử DIV</title>
+	<title>Tạo layout với DIV</title>
 	<style type="text/css" media="screen">
 		*{margin: 0;
-		padding: 0;}
-	div{
-		  color: white;
-		  width: 1000px;
-		  height:660px;
-		  
-		  
+			padding: 0;}
+		#container{
+			border: 5px solid pink;
+			height: 660px;
+			color:  #fff;
+			width: 1000px;
+			margin: 0 auto;
 		}
-		#div1{
-		  height: 110px;
-		  width:1000px;
-		  background: red;
-		  
+		#header{
+			background: red;
+			height: 110px;
 		}
-		#div2{
-		  height: 40px;
-		  width:1000px;
-		  background: green;
+		#nav{
+			background: green;
+			height: 40px;
 		}
-		#div3{
-		  height:400px;
+		#body{
+			float:  left;
+			height: 400px;
+			width: 500px;
 		}
-		.section{
-		  background: blue;
-		  height: 200px;
-		  width:600px;
-		  float: left;
+		#section{
+			background: blue;
+			height: 200px;
 		}
-		.artile{
-		  background: black;
-		  height: 200px;
-		  width:600px;
-		  float: left;
+		#artile{
+			background: black;
+			height: 200px;
 		}
-		.aside{
-		  height: 400px;
-		  width:400px;
-		  background: gray;
-		  float: right;
-		  margin-top: -200px;
-		  
-		  }
-		#div4{
-		  background: orange;
-		  height: 110px;
+		#aside{
+			background: gray;
+			float: left;
+			height: 400px;
+			width: 500px;
+		}
+		#footer{
+			background: orange;
+			height: 110px;
 		}
 		.clear{
-		  clear: both;
+			clear: both;
 		}
-	</style>
+	</style>		
 </head>
 <body>
-	<div>
-		<div id="div1">
-		  Header
+	<div id="container">
+		<div id="header">
+			header
 		</div>
-		<div id="div2">
-		  Nav
+		<div id="nav">
+			Nav
 		</div>
-		<div id="div3">
-		  <div class="section">
-		    Section
-		  </div>
-		  <div class="artile">
-		    Artile 
-		  </div>
-		  <div class="aside">
-		    Aside 
-		  </div>
-		  <div class="clear"></div>
+		<div id="body">
+			<div id="section">
+				section
+			</div>
+			<div id="artile">
+				artile
+			</div>
 		</div>
-		<div id="div4">
-		  Footer
+		<div id="aside">
+			aside
 		</div>
-		
+		<div class="clear">
+			
+		</div>
+		<div id="footer">
+			footer
+		</div>
 	</div>
 </body>
 </html>
