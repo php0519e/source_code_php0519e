@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dung layout</title>
+	<link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+		    <div id="logo">LOGO AREA</div>
+		    <div id="rlogo">
+		        <div id="banner">BANNER AREA</div>
+		           <div id="menu">
+		    	   <ul>
+		    		   <li id="class">Trang chủ</li>
+		    		   <li id="class">Khoá học</li>
+		    		   <li id="class">Đăng ký</li>
+		    		   <li id="class">Giới thiệu</li>
+		    	   </ul>
+		           </div>
+		    </div>
+		</div>
+		
+	</div>
+
+	<div id="body">
+		<div id="khoahoc">
+			<div id="menuKH">
+				<ul id="menu1">
+					<li>
+						<a href="">Menu khoá học</a> 
+						<ul>
+							<li><a href="">Lập trình ứng dụng</a></li>
+							<li><a href=""> Đồ họa đa phương tiện</a></li>
+							<li><a href=""> Quản trị mạng</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="dangky">
+			<div id="tieude">
+				Đăng ký khóa học   </div>
+				<div id="cochu">
+				  <form action="process.php" method="post">
+					<label>Họ tên (*)</label>
+					<input type="text" name="txtUser" placeholder="Mời bạn nhập họ tên"><br><br>
+
+					<label>Giới tính</label>
+					<input type="radio" name="rbGender" value="1">Nam &nbsp &nbsp
+					<input type="radio" name="rbGender" value="2">Nữ <br> <br>
+
+					<label>Địa chỉ (*)</label>
+					<input type="text" name="city" placeholder="Mời bạn nhập địa chỉ"> <br><br>
+
+					<label>Điện thoại</label>
+					<input type="text" name="numberphone" placeholder="Mời bạn nhập sdt"> <br><br>
+
+					<label>Email</label>
+					<input type="text" name="mail" placeholder="tên@gmail.com"> <br><br>
+
+					<label>Khóa học</label>
+					<select name="KH">
+						<option value="0">Mời chọn khóa học</option>
+						<option value="1">Lập trình ứng dụng</option>
+						<option value="2">Đồ họa đa phương tiện</option>
+						<option value="3">Quản trị mạng</option>
+					</select> <br><br> <br> 
+                    
+                    <div id="giohoc">
+					  <div id="giohoc1"><label>Giờ học</label></div>
+					<input type="checkbox" name="time" value="1"> A(7h30-9h30) &nbsp &nbsp
+					<input type="checkbox" name="time" value="2"> B(9h45-11h45) &nbsp &nbsp
+					<input type="checkbox" name="time" value="3"> C(13h30-15h30) <br> <br>
+					<input type="checkbox" name="time" value="4"> D(15h45-17h45)
+					<input type="checkbox" name="time" value="5"> E(18h-21h)
+					</div> <br> <br>
+                    
+                    <div id="register">
+					<input type="submit" name="btnReg" value="Register"> &nbsp &nbsp
+		            <input type="reset" name="btnRes" value="Reset">
+		            </div>
+				  </form>
+				</div>
+			
+		</div>
+	</div>
+</body>
+</html>

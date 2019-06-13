@@ -1,0 +1,158 @@
+ *{
+        	margin: 0px;
+        	padding: 0px;
+        }
+		#container{
+			width: 100%;
+			height: 100%;
+			border: 1px solid black;
+		}
+		#header{ 
+			width: 100%;
+			height: 100px;
+            border: 1px solid black;
+           
+           
+		}
+		#logo{
+			width: 25%;
+			height: 60px;
+			border: 1px solid black;
+			float: left;
+			text-align: justify;
+		    padding-top: 40px;
+		}
+	    #rlogo{
+			border: 1px solid black;
+			width: 74.6%;
+			height: 100px;
+			float: left;
+		}
+		#banner{
+			border: 1px solid black;
+			width: 100%;
+			height: 40px;
+			text-align: center;
+			padding-top: 30px;
+		}
+		#menu{
+           border: 1px solid black;
+           width: 100%;
+           height: 25px;
+		}
+		#class{
+			width: 24.5%;
+			display: inline-block;
+            
+           padding-top: 5px;
+		}
+
+		#class:hover{
+			background-color: blue;
+			color: white;
+		}
+
+		#body{
+			width: 100%;
+			height: 500px;
+			border: 1px solid black;
+
+		}
+
+		#khoahoc{
+			width: 30%;
+		    height: 500px;
+			border: 1px solid black;
+			float: left;
+			font-weight: bold;
+			
+		}
+
+		#dangky{
+			width: 69.5%;
+			height: 500px;
+			border: 1px solid black;
+			float: left;
+			
+		}
+
+		#menuKH{
+			width: 100%;
+			height: 150px;
+			border: 1px solid black;
+		}
+
+		#menu1{
+			width: 50%;
+			height: 20px;
+		
+		}
+        ul {
+			list-style: none;   /* thiet lap kieu cho danh sach */
+			padding: 0px;
+			margin: 0px;
+		}
+		ul li ul{
+			display: none; /* xac dinh loai hien thi cua thanh phan */
+			
+		}
+		ul li:hover >ul{
+			display: block;
+			
+		}
+		ul li{
+			text-align: center;
+			position: relative;  /* xac dinh loai cua phuong phap dinh vi tri cho thanh phan */
+			border: 1px solid black;
+		}
+	    ul li ul{
+			position: absolute;
+			top: 0px;
+			left: 100%;
+			width: 100%
+		}
+	    a{
+			text-decoration: none;
+			display: block;
+			padding: 5px 10px;
+		}
+		a:hover{
+			background-color: blue;
+			color: white;
+		}
+
+		#tieude{
+			font-size: 24px;
+			color: #090;
+			text-align: center;
+			font-weight: bold; /* chu dam */
+		}
+
+		label{
+			display: inline-block;
+			width: 120px;
+		}
+
+		#cochu{
+			font-size: 18px;
+		}
+
+		#giohoc{
+			width: 100%;
+			height: 100px;
+			
+		}
+
+		#giohoc1{
+			width: 30%;
+			float: left;
+			height: 90px;
+			
+		
+			margin-top: 10px;
+		}
+
+		#register{
+			text-align: center;
+			
+		}
