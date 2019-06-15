@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>z-index</title>
+</head>
+<style>
+	.logo{
+		width: 100px;
+		height: 100px;
+	}
+	#logo1{
+		position: absolute;
+		top: 50px;
+		left: 70px;
+		background-color: red;
+		z-index: 1;
+	}
+	#logo2{
+		position: absolute;
+		top: 100px;
+		left: 140px;
+		background-color: blue;
+		z-index: 2;
+	}
+	#logo3{
+		position: absolute;
+		top: 150px;
+		left:  210px;
+		background-color: yellow;
+		z-index: 3;
+	}
+	#logo4{
+		position: absolute;
+		top: 200px;
+		left:  280px;
+		background-color: black;
+		z-index: 4;
+	}
+</style>
+<body>
+	<div id="logo1" class="logo"></div>
+	<div id="logo2" class="logo"></div>
+	<div id="logo3" class="logo"></div>
+	<div id="logo4" class="logo"></div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+</head>
+<style>
+	body{
+		background-color: #ffaa60;
+	}
+	#header{
+		width: 100%;
+		height: 80px;
+		border: solid black;
+		display: block;
+	}
+	#logoarea{
+		width: 20%;
+		height: 80px;
+		float: left;
+		border-right: solid black;
+		display: block;
+	}
+	#block2{
+		width: 80%;
+		float:left;	
+		height: 80px;
+		display: block;
+	}
+	#banner{
+		width: 100%;
+		height: 40px;
+		border-bottom: solid black;
+		display: block;
+	}
+	#menu{
+		width: 100%;
+		height: 40px;
+		display: block;
+	}
+	#trangchu{
+		float: left;
+		width: 200px;
+		display: block;
+	}
+	#khoahoc{
+		float: left;
+		width: 200px;
+	display: block;
+	}
+	
+	#dangki{
+		float: left;
+		width: 200px;
+		display: block;
+	}
+	#gioithieu{
+		float: left;
+		width: 200px;
+		display: block;
+		}
+
+
+	#block3{
+		width: 100%;
+		height: 500px;
+		border: solid black;
+		display: block;
+	}
+	#block1{
+		float: left;
+		width: 30%;
+		border-right: solid black;
+		clear:left;
+		display: block;
+	}
+	#form{
+		width: 70%;
+		float: right;
+		display: block;
+	}
+</style>
+<body>
+	<div id="header">
+		<div id="logoarea">logoarea </div>
+
+		<div id="block2">
+			<div id="banner">banner area</div>
+			<div id="menu">
+				<div id="trangchu">trang chủ</div>
+				<div id="khoahoc">Khóa học</div>
+				<div id="dangki">Đăng kí</div>
+				<div id="gioithieu">Giới thiệu</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="block3">
+		<div id="block1">
+			<ul>
+				<li>Lập trình ứng dụng</li>
+				<li>Đồ họa phương tiện</li>
+				<li>Quản trị mạng</li>
+			</ul>
+		</div>
+		<div id="form">
+			<h3>Đăng kí khóa học</h3>
+			<div>
+				<label for="">Họ tên</label>
+				<input type="text" name="name"><br>
+				<label for="">Giới tính</label>
+				Nam<input type="radio" name="gt" value="1">
+				Nữ<input type="radio" name="gt" value="0"><br>
+				<label for="">Địa chỉ</label>
+				<input type="text" name="address"><br>
+				<label for="">Điện thoại</label>
+				<input type="text" name="phone"><br>
+				<label for="">Email</label>
+				<input type="text" name="email"><br>
+				<label for="">Khóa học</label>
+				<select name="khoahoc" id="">
+					<option value="ltud">lập trình ứng dụng</option>
+					<option value="dhdpt"> đồ họa đa phươn tiện</option>
+					<option value="qtm">quản trị mạng</option>
+				</select><br>
+				<label for="">giờ học</label>
+				<input type="checkbox">A(7h30-9h30)
+				<input type="checkbox">B(9h45-11h45)
+				<input type="checkbox" name="">C(13h30-15h30)<br>
+				<input type="checkbox">D(15h45-17h45)<br>
+				<input type="button" value="Register">
+				<input type="button" value="reset">
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

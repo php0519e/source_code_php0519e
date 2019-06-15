@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo</title>
+</head>
+<style>
+	body{
+		background-color: #ffaa60;
+	}
+	#header{
+		width: 100%;
+		height: 115px;
+		border: solid black;
+		color: white;
+		font-size: 14px;
+		font-weight: bold;
+		background-color:  #666666;
+	}
+	#logoarea{
+		width: 20%;
+		height: 115px;
+		float: left;
+		border-right: solid black;
+	}
+	#block2{
+		width: 79%;
+		height: 80px;
+    	display: inline-block;
+	}
+	ul{
+		padding: 0px;
+	}
+	#banner{
+		width: 100%;
+    	height: 78px;
+    	border-bottom: solid black;
+	}
+	#menu{
+		width: 100%;
+    	height: 40px;
+    	margin: 0;
+	}
+	#trangchu{
+		float: left;
+		width: 200px;
+	}
+	#khoahoc{
+		float: left;
+		width: 200px;
+	
+	}
+	
+	#dangki{
+		float: left;
+		width: 200px;
+		
+	}
+	#gioithieu{
+		float: left;
+		width: 200px;
+		}
+
+	#block3{
+		width: 100%;
+		height: 500px;
+		border: solid black;
+	}
+	#block1{
+		float: left;
+		width: 30%;
+		border-right: solid black;
+		height:100%;
+	}
+	#form{
+		width: 69%;
+		float: left;
+	}
+	ul#menu li{
+		width: 25%;
+    	float: left;
+    	line-height: 36px;
+    	display: block;
+	}
+	label{
+		padding-left: 5px;
+	}
+	#block1 ul li{
+	padding-left: 34px;
+    display: block;
+    border: 1px solid black;
+    height: 40px;
+
+	}
+	#block1 ul li p{
+		display: block;
+    	width: 100%;
+   		height: 100%;
+    	margin: 0;
+    	border-left: 1px solid black;
+    	line-height: 36px;
+	}
+	ul#menu li p{
+		border-right: 1px solid black;
+		display: block;
+    	width: 100%;
+   		height: 100%;
+    	margin: 0;
+	}
+	#block1{
+		background-color: #090;
+		color: yellow;
+		font-weight: bold;
+	}
+</style>
+<body>
+	<div id="header">
+		<div id="logoarea">logoarea </div>
+		<div id="block2">
+			<div id="banner">banner area</div>
+			<ul id="menu">
+				<li><p>trang chủ</p></li>
+				<li><p>Khóa học</p></li>
+				<li><p>Đăng kí</p></li>
+				<li><p>Giới thiệu</p></li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="block3">
+		<div id="block1">
+			<ul>
+				<li><p>Lập trình ứng dụng</p></li>
+				<li><p>Đồ họa phương tiện</p></li>
+				<li><p>Quản trị mạng</p></li>
+			</ul>
+		</div>
+		<div id="form">
+			<h3 style="text-align: center; color: #090; font-weight: bold;font-size: 24px">Đăng kí khóa học</h3>
+			<div>
+				<label for="">Họ tên</label>
+				<input type="text" name="name" style="width: 250px;margin-left: 104px; margin-bottom: 15px;"><br>
+				<label for="" style="margin-right: 85px; margin-bottom: 15px;">Giới tính</label>
+				<input type="radio" name="gt" value="1">Nam
+				<input type="radio" name="gt" value="0">Nữ<br>
+				<label for="">Địa chỉ</label>
+				<input type="text" name="address" style="width: 250px;margin-left: 104px; margin-bottom: 15px;margin-top: 15px;"><br>
+				<label for="">Điện thoại</label>
+				<input type="text" name="phone" style="width: 250px;margin-left: 80px; margin-bottom: 15px;"><br>
+				<label for="">Email</label>
+				<input type="text" name="email" style="width: 250px;margin-left: 114px;; margin-bottom: 15px;"><br>
+				<label for="" style="width: 250px;margin-right: 86px;; margin-bottom: 15px;">Khóa học</label>
+				<select name="khoahoc" id="" style="width: 253px;height: 26px; margin-bottom: 15px;">
+					<option value="ltud">lập trình ứng dụng</option>
+					<option value="dhdpt"> đồ họa đa phươn tiện</option>
+					<option value="qtm">quản trị mạng</option>
+				</select><br>
+				<label for="" style="float: left;margin-right: 102px;; margin-bottom: 15px;">giờ học</label>
+				<div style="float:left;line-height: 35px;">
+					<input type="checkbox">A(7h30-9h30)
+					<input type="checkbox">B(9h45-11h45)
+					<input type="checkbox" name="">C(13h30-15h30)<br>
+					<input type="checkbox">D(15h45-17h45)
+					<input type="checkbox">E(18h-21h)<br>
+				</div>
+				<div style="margin-top: 128px; margin-left: 320px;">
+					<input type="button" value="Register">
+					<input type="button" value="reset">
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

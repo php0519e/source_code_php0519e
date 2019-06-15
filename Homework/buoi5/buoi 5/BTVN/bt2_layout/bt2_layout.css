@@ -1,0 +1,87 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.acticle h3 {padding: 10px 0px;}
+
+.aside h2 {
+    padding: 35px 79px;
+}
+
+footer {}
+
+.acticle {
+    height: 150px;
+}
+
+.footer {
+    background: black;
+    color: white;
+    height: 110px;
+    text-align: center;
+    line-height: 110px;
+}
+
+.img {
+    height: 250px;
+    background-image: url(windows8.jpg);
+    margin-top: 11px;
+    background-size: contain;
+}
+
+.aside {
+    background: whitesmoke;
+    float: right;
+    height: 400px;
+    width: 21%;
+}
+
+.aside li {
+    padding: 8px 110px;
+}
+
+.aside ul {
+    list-style-type: none;
+}
+
+.nav a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.nav {
+    height: 40px;
+    background: blue;
+}
+
+.nav li {
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 131px;
+}
+
+.nav li:hover {
+    background: crimson;
+}
+
+.nav ul {
+    list-style-type: none;
+}
+
+.hd2 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 50%;
+    margin-top: 2px;
+}
+
+.hd1 {font-weight: bold;text-transform: uppercase;margin-left: 45%;font-size: 17pt;padding-top: 2%;}
+
+.header {
+    height: 110px;
+    color: blue;
+}

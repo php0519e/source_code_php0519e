@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MENU Đa cấp</title>
+	<style>
+		* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+a:hover {
+    background: #cd6133;
+}
+
+li {
+    display: inline-table;
+    height: 40px;
+    width: 140px;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+}
+
+ul {
+    list-style-type: none;
+    background: #ff793f;
+}
+
+/*Xử lý hiệu ứng */
+
+ul.spnu {
+    position: absolute;
+    display: none;
+}
+
+.lispnu:hover .spnu {
+    display: block;
+}
+
+	</style>
+</head>	
+<body>
+	<nav class="menu">
+		<ul>
+			<li class="lispnu">
+				<a href="">Sản phẩm nữ</a>
+
+				<ul class="spnu">
+					<li><a href="">Áo nữ</a></li>
+					<li><a href="">Quần nữ</a></li>
+					<li><a href="">Ví nữ</a></li>
+				</ul>
+			</li>
+
+			<li class="lilienhe"><a href="">Liên hệ</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

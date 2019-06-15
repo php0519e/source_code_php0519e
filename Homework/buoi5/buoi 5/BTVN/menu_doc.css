@@ -1,0 +1,76 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    color: white;
+}
+
+li {
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 1px solid white;
+    position: relative;
+}
+
+li:hover{
+	 border: 0;
+}
+
+a:hover {
+    background: #2980b9;
+    color: white;
+}
+
+ul {
+    list-style-type: none; // xóa dấu chấm ở mỗi li
+    background: #3498db;
+    width: 158px;
+}
+
+
+body {
+    font-family: sans-serif;
+    font-size: 15pt;
+}
+
+/* Menu ẩn hiện */
+ul.aonam {
+    position: absolute;
+    left: 159px;
+    top: 0;
+    display: none;
+}
+
+ul.spnam {
+    position: absolute;
+    left: 159px;
+    top: 0;
+    display: none;
+}
+
+
+.an:hover .aonam{
+	display: block;
+}
+
+.sna:hover .spnam{
+	display: block;
+}
+
+
+ul.spnu {
+    top: 0;
+    position: absolute;
+    left: 159px;
+    display: none;
+}
+
+.snu:hover .spnu {
+    display: block;
+}
