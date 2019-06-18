@@ -18,13 +18,27 @@
 		/* Style Navigation */
 		#nav {height: 40px; background-color: green;}
 		ul#menu {margin: 0px; padding: 0px; list-style: none;}
-		ul#menu li {margin: 0px; padding: 0px; float: left;}
-		ul#menu li a {color: white; margin: 0px; padding: 11px; display: block;}
+		ul#menu > li {margin: 0px; padding: 0px; float: left; position: relative;}
+		ul#menu > li > a {color: white; margin: 0px; padding: 11px; display: block;}
+
+		ul#menu > li:hover > .menu2 {display: block;}
+		ul#menu > li:hover > a {background-color: rgba(30,30,90, 0.9); color: white;}
+
+		.menu2 {display: none; position: absolute; top: 100%; left: 0; padding: 0px; margin: 0px; list-style: none; background-color: rgb(30,30,30); width: 100%;}
+		.menu2 > li {padding: 0px; margin: 0px; position: relative;}
+		.menu2 > li > a {color: #fff; margin: 0px; padding: 5px 10px; display: block;}
+		.menu2 > li:hover .menu3 {display: block;}
+		.menu2 > li:hover > a { background-color: red; color: yellow; }
+
+		.menu3 {position: absolute; padding: 0px; margin: 0px; list-style: none; background-color: #ccc; top: 0px; left: 100%; width: 100%; display: none;}
+		.menu3 > li { padding: 0px; margin: 0px; }	
+		.menu3 > li > a {display: block; margin: 0px; padding: 5px 10px; color: #000;}
+		.menu3 > li:hover > a {color: #fff; background-color: purple;}
 
 		#left {float: left; width: 70%;}
 		#section {height: 400px; overflow: hidden;}
-
-		#article {height: 200px; border-top: 1px double gray;}
+		#section img {width: 100%; height: 100%;box-sizing: border-box;}
+		#article {height: 200px; border-top: 1px double gray; padding: 10px; background-color: gainsboro;}
 		#article h3 {margin: 20px 0px; padding: 10px 0px; font-size: 28px;}
 
 		#aside {float: left; width: 30%; height: 400px;}
@@ -52,10 +66,34 @@
 			<li><a href="#trangchu">Trang chủ</a></li>
 			<li><a href="#gioithieu">Giới thiệu</a></li>
 			<li><a href="#sanpham">Sản phẩm</a></li>
-			<li><a href="#tintuc">Tin tức</a></li>
+			<li><a href="#tintuc">Tin tức</a>
+				<ul class="menu2">
+					<li><a href="#">Post 1</a></li>
+					<li><a href="#">Post 2</a>
+						<ul class="menu3">
+							<li><a href="#">Post 1</a></li>
+							<li><a href="#">Post 2</a></li>
+							<li><a href="#">Post 3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Post 3</a></li>
+				</ul>
+			</li>
 			<li><a href="#tuyendung">Tuyển dụng</a></li>
 			<li><a href="#dathangsanpham">Đặt hàng sản phẩm</a></li>
-			<li><a href="#dangkythuctap">Đăng ký thực tập</a></li>
+			<li><a href="#dangkythuctap">Đăng ký thực tập</a>
+				<ul class="menu2">
+					<li><a href="#">Post 1</a></li>
+					<li><a href="#">Post 2</a>
+						<ul class="menu3">
+							<li><a href="#">Post 1</a></li>
+							<li><a href="#">Post 2</a></li>
+							<li><a href="#">Post 3</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Post 3</a></li>
+				</ul>
+			</li>
 			<li><a href="#lienhe">Liên hệ</a></li>
 			<div class="clearfix"></div>
 		</ul>
