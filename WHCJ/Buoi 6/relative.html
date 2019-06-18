@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Position CSS</title>
+	<style type="text/css">
+		.logo{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		#logo1{
+			position: absolute;
+			top: 50px;
+			left: 70px;
+		}
+
+		#logo2{
+			position: absolute;
+			top: 0px;
+			right: 0px;
+		}
+
+		#logo3{
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+		}
+
+		#logo4{
+			position: absolute;
+			right: 50px;
+			bottom: 70px;
+		}
+		#container{
+			margin: 0px auto;
+			position: relative;
+			width: 500px;
+			height: 500px;
+			border: 1px solid green;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="logo1" class="logo"></div>
+		<div id="logo2" class="logo"></div>
+		<div id="logo3" class="logo"></div>
+		<div id="logo4" class="logo"></div>
+	</div>
+</body>
+</html>
