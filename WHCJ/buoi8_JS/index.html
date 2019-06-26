@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script  type="text/javascript" >
+		//nhóm hàm có sẵn
+		/*var result = confirm("bạn có chắc muốn mua sản phẩm này");
+		if (result==true) {
+			alert("bạn đã mua sản phẩm này");
+		}
+		var name = prompt("Mời bạn nhập họ và tên","Nguyễn Văn A");
+		var age = prompt("Mời bạn nhập tuổi");
+		document.write("Chào mừng "+ name + "<br>,Bạn đã "+ age + "");*/
+		// var x = parsent(prompt("Nhập giá trị của x"));
+		// var y = parsent(prompt("Nhập giá trị của y"));
+		// var z = x + y;
+		// alert("Kết quả " + z);
+		function checkphone(){
+			var p = document.getElementById("phone").value;
+			var valid = isNaN(p);
+			if (valid==false) {
+				alert("Số đt đã đúng định dạng");
+			}
+			else{
+				alert("Só đt sai");
+			}
+		}
+	</script>
+	
+</head>
+<body>
+	<!-- <input type="button" onclick="alert('Hello part 3');" value="Click <3"> -->
+	<input type="text" name="txtPhone" id="phone">
+	<input type="button" name="btnCheck" value="Kiểm tra sđt" id="check" onclick="checkphone('');">
+</body>
+</html>
