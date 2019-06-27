@@ -9,19 +9,25 @@
 			width: 120px;
 			margin-bottom: 20px;
 		}
+
 	</style>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--Su dung thu vien Bootstrap bang CDN hosting-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 </head>
 <body>
 	<form action="proccess.php" method="get">
 		<label>Tên đăng nhập</label>
-		<input type="text" name="txtUser" value="thopn"><br>
+		<input type="text" name="txtUser" value="thopn" class="form form-control"><br>
 
 		<label>Mật khẩu</label>
 		<input type="password" name="txtPass"><br>
 
 		<label>Giới tính</label>
-		Nam <input type="radio" name="rbGender" value="1" checked>
+		Nam <input type="radio" name="rbGender" value="1" checked">
 		Nữ	<input type="radio" name="rbGender" value="0"><br>
 
 		<label>Quê quán</label>
