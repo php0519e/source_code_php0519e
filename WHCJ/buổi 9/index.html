@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS</title>
+	<script type="text/Javascript">
+		//tên đăng nhập không chứa khoảng trắng
+		var userReg = /^\S[a-zA-Z0-9_]{5,10}$/;
+		// var str = userRed.test("nguyen")
+		// alert(str);
+		// alert(userReg.test("nguyen"));
+		//đúng định dạng số điện thoại
+		var moReg = /^0\d{9}$/;
+		// alert(moReg.test("0984327975"));
+		//đúng định dạng email
+		var emailReg = /^([a-zA-Z0-9_\.\-])+\@([a-zA-Z0-9_\-])+\.([a-zA-Z0-9_]){2,4}+$/;
+		// var str = emailReg.test("nguyen")
+		// alert(str);
+		function formvalid(){
+			status = true;
+			//lấy giá trị trên các trường trong form
+			var u = document.getElementById("user").value;
+			if(u==""){
+				//alert("Yêu cầu nhập dữ liệu");
+				document.getElementById("user").style = "border:1px solid red";
+				document.getElementById("msuser").innerHTMl = "Tên đăng nhập không được bỏ trống";
+				status = false;
+			}else{
+				if (userReg.test(u)==false) {
+					//alert("tên đăng nhập sai");
+					document.getElementById("msuser").innerHTMl = "Tên đăng nhập sai";
+					status = false;
+					}
+			}
+			//kiểm tra giá trị của biến status
+			if(status==false){
+				return false;
+			}else{
+				return true;
+			}
+		}
+	</script>
+</head>
+<body>
+	<form action="process.php" method="post" onsubmit=" return formvalid();">
+	<table>
+		<tr>
+			<td>Tên đăng nhập</td>
+			<td><input type="text" name="txtuser" id="user"></td>
+			<td><label id="msuser"></label></td>
+		</tr>
+		<tr>
+			<td>Số điện thoại</td>
+			<td><input type="text" name="txtphone" id="phone"></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><input type="text" name="txtEmail" id="email"></td>
+		</tr>
+		<tr>
+			<td><input type="submit" name="btnValic" value="Kiểm tra"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>
