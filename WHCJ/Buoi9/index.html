@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		label{
+			color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		//Ten dang nhap khong chua khoang trang
+		//So ky tu khong vuot qua 10
+		//Chi cho phep nhap cac ky tu A-Z | a-z | 0-9
+		var userReg = /^([A-Za-z0-9]{1,9})$/;
+		
+		//Dung dinh dang so dien thoai
+		var phoneReg = /^0\d{9}$/;
+
+		//Dung dinh dang dang email
+		var emailReg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+		function formValid(){
+			var status = true;
+			//Lay gia tri tren cac truong trong Form
+			var u = document.getElementById("user").value;
+			if(u==""){
+				document.getElementById("user").style = "border:1px solid red";
+				document.getElementById("msgUser").innerHTML = "Ten dang nhap phai dien";
+				status = false;
+			}else{
+				if(userReg.test(u)==false){
+					document.getElementById("msgUser").innerHTML = "Ten dang nhap sai dinh dang";
+					status = false;	
+				}
+			}
+
+			//Kiem tra gia tri cua bien 'status'
+			if(status==false){
+				return false;
+			}else{
+				return true;
+			}
+
+		}
+
+	</script>
+</head>
+<body>
+	<form action="proccess.php" method="post" onsubmit="return formValid();">
+	<table>
+		<tr>
+			<td>Ten dang nhap (*)</td>
+			<td><input type="text" name="txtUser" id="user"></td>
+			<td><label id="msgUser"></label></td>
+		</tr>
+		<tr>
+			<td>So dien thoai</td>
+			<td><input type="text" name="txtPhone" id="phone"></td>
+			<td><label id="msgPhone"></label></td>
+		</tr>
+		<tr>
+			<td>Ten dang nhap</td>
+			<td><input type="text" name="txtEmail" id="email"></td>
+			<td><label id="msgEmail"></label></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+				<input type="submit" name="btnValid" value="Kiem tra">
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
