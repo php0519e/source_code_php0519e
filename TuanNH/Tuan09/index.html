@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unit 9</title>
+	<script type="text/javascript">
+		function validate() {
+			var user = document.getElementById("user").value;
+			var telephone = document.getElementById("telephone").value;
+			var email = document.getElementById("email").value;
+
+			var messageUser = document.getElementById("messUser");
+			var messageTelephone = document.getElementById("messTelephone");
+			var messageEmail = document.getElementById("messEmail");
+
+			var nameReg = /^[a-zA-Z0-9]{1,10}$/i;
+			var phoneReg = /^[0-9]{10}$/i;
+			var emailReg = /^[A-Za-z0-9_\.]{3,10}@[a-z]{2,10}\.[a-z]{2,4}$/;
+
+			var status = true;
+			if (!nameReg.test(user)) {
+				messageUser.innerHTML = "Please fill correct form - field User";
+				status = false;
+			}
+			if (!phoneReg.test(telephone)) {
+				messageTelephone.innerHTML = "Please fill correct form - field Telephone";
+				status = false;
+			}
+			if (!emailReg.test(email)) {
+				messageEmail.innerHTML = "Please fill correct form - field Email";
+				status = false;
+			}
+			return status ? true : false;
+		}
+	</script>
+	<style type="text/css">
+		.notice {color: red;}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form action="haloween" method="POST" onsubmit="return validate();">
+			<table>
+				<tr>
+					<td><label for="user">Username</label></td>
+					<td><input type="text" id="user" name="txtUser"></td>
+					<td><label id="messUser" class="notice"></label></td>
+				</tr>
+				<tr>
+					<td><label for="telephone">Telephone</label></td>
+					<td><input type="text" id="telephone" name="txtTelephone"></td>
+					<td><label id="messTelephone" class="notice"></label></td>
+				</tr>
+				<tr>
+					<td><label for="email">Email</label></td>
+					<td><input type="text" id="email" name="txtEmail"></td>
+					<td><label id="messEmail" class="notice"></label></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" name="submit" value="Submit"></td>
+				</tr>
+			</table>
+		</form>
+		<div class="message"></div>
+	</div>
+</body>
+</html>

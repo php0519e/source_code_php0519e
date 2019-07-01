@@ -9,7 +9,9 @@
 		.fleft {float: left;}
 		.fright {float: right;}
 		.clearfix {clear: both;}
-		
+		.warning {color: red;}
+		.hidden {display: none;}
+
 		/* Style for Header */
 		.header {}
 		.left-top {width: 25%;}
@@ -41,6 +43,45 @@
 		.field-input {width: 70%;}
 		.field {margin: 10px;}
 	</style>
+	<script type="text/javascript">
+		function validate() {
+			var kiemtraHoTen = true, kiemtraGioiTinh = true, kiemtraDiaChi = true, kiemtraEmail= true;
+
+			var hoten = document.getElementById("txtHoten").value;
+			var gioitinh = document.querySelector("input[name='rdGioitinh']:checked");
+			var diachi = document.getElementById("txtDiachi").value;
+			var email = document.getElementById("txtEmail").value;
+
+			// Họ tên phải gồm 2 đến 5 từ, giữa mỗi từ chỉ có 1 dấu cách, chỉ được nhập chữ cái.
+			var hotenReg = /^(\w+\s?){2,5}$/;
+			var diachiReg = /^(\w+\s.){5}/;
+
+			/* Email phải có định dạng taikhoan@tenmien , trong đó: taikhoan chỉ chứa chữ cái, chữ số hoặc gạch dưới, tenmiencó 1 đến 3 dấu chấm, sau dấu chấm là dãy chữ cái hoặc chữ số hoặc gạch chân (ví dụ: .com.vn) */
+			var emailReg = /^[A-Za-z0-9_\.]{3,10}@[a-z]{2,10}\.[a-z]{2,4}$/;
+
+			if (!hotenReg.test(hoten)) {
+				kiemtraHoTen = false;
+				document.getElementById("mesHoten").classList.remove("hidden");	
+			}
+			if (gioitinh == null || gioitinh == undefined) {
+				kiemtraGioiTinh = false;
+				document.getElementById("mesGioitinh").classList.remove("hidden");		
+			}
+			if (!diachiReg.test(diachi)) {
+				kiemtraDiaChi = false;
+				document.getElementById("mesDiaChi").classList.remove("hidden");	
+			}
+			if (!emailReg.test(email)) {
+				kiemtraEmail = false;
+				document.getElementById("mesEmail").classList.remove("hidden");	
+			}
+
+			if (!kiemtraHoTen || !kiemtraDiaChi || !kiemtraGioiTinh || !kiemtraEmail) {
+				return false;
+			} 
+			return true;
+		}
+	</script>
 </head>
 <body>
 	<div class="container">
@@ -78,13 +119,14 @@
 		</div>
 		<div class="content fleft">
 			<h3>Đăng ký khóa học</h3>
-			<form action="process.php" method="post">
+			<form action="process.php" method="post" onsubmit="return validate();">
 				<div class="field">
 					<div class="field-label fleft">
 						<label for="txtHoten">Họ tên (*)</label>
 					</div>
 					<div class="field-input fleft">
-						<input type="text" name="txtHoten">
+						<input type="text" name="txtHoten" id="txtHoten" /> <br>
+						<span class='warning hidden' id="mesHoten">Họ tên phải gồm từ 2 đến 5 từ</span>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -96,6 +138,8 @@
 					<div class="field-input fleft">
 						<input type="radio" name="rdGioitinh" id="nam" value="nam"> <label for="nam">Nam</label> 
 						<input type="radio" name="rdGioitinh" id="nu" value="nu"> <label for="nu">Nữ</label>
+						<br>
+						<span class='warning hidden' id="mesGioitinh">Hãy chọn giới tính của bạn</span>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -105,7 +149,8 @@
 						<label for="txtDiachi">Địa chỉ (*)</label>
 					</div>
 					<div class="field-input fleft">
-						<input type="text" name="txtDiachi">
+						<input type="text" name="txtDiachi" id="txtDiachi"> <br>
+						<span class='warning hidden' id="mesDiaChi">Địa chỉ phải lớn hơn 5 từ</span>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -115,7 +160,7 @@
 						<label for="txtDienthoai">Điện thoại</label>
 					</div>
 					<div class="field-input fleft">
-						<input type="text" name="txtDienthoai">
+						<input type="text" name="txtDienthoai" id="txtDienthoai" />
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -125,7 +170,8 @@
 						<label for="txtEmail">Email (*)</label>
 					</div>
 					<div class="field-input fleft">
-						<input type="text" name="txtEmail">
+						<input type="text" name="txtEmail" id="txtEmail" /> <br>
+						<span class='warning hidden' id="mesEmail">Hãy nhập đúng định dạng email</span>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -135,7 +181,7 @@
 						<label for="slKhoahoc">Khóa học</label>
 					</div>
 					<div class="field-input fleft">
-						<select name="slKhoahoc" id="">
+						<select name="slKhoahoc" id="slKhoahoc">
 							<option value="0">Mời chọn khóa học</option>
 							<option value="1">Lập trình ứng dụng</option>
 							<option value="2">Đồ họa đa phương tiện</option>
