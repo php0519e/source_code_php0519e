@@ -28,7 +28,7 @@ a:hover {
 }
 
 ul {
-    list-style-type: none; // xóa dấu chấm ở mỗi li
+    list-style-type: none;
     background: #3498db;
     width: 158px;
 }

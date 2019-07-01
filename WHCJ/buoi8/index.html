@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Giới thiệu về JS</title>
+	<script type="text/javascript">
+
+		// nhóm hàng có sẵn ( built-int)
+		/*var result = confirm("bạn có chắc muốn mua hàng hay không?");
+		if(result ==true)
+		{
+			alert("Bạn đã mua hàng thành công");
+		}*/
+		/*var name=prompt("Mời bạn nhập họ và tên","Nguyễn Văn A");
+		var age= prompt("Mời bạn nhập tuổi");
+		document.write("Chào mừng " + name +"<br>Bạn đã "+age+ " đủ tuổi để tham gia.")*/
+		/*var x=parseInt(prompt("nhập giá trị của x: "));
+		var y=parseInt(prompt("nhập giá trị của y: "));
+		var z=x+y;
+		alert("kết quả "+z);*/
+		// kiểm tra số điện thoại
+		function checkPhone() {
+			var p=document.getElementById("phone").value;
+			var valid= isNaN(p);
+			if(valid==fulse){
+				alert("Số điện thoại đúng định dạng.");
+
+			}
+			else{
+				alert("Sdt sai định dạng");
+			}
+		}
+	</script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+
+	Số điện thoại <input type="text" name="txtPhone" id="Phone" value="">
+	<input type="button" name="btnCheck" value="kiểm tra số điện thoại" id="check" onclick="checkPhone();">
+</body>
+</html>
