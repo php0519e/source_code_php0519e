@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EDUMALL</title>
+	<style type="text/css">
+		label{
+			color:red;
+		}
+	</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script type="text/javascript">
+		function formValid(){
+			var status = true;
+			
+			/*--- KIỂM TRA TÍNH HỢP LỆ CỦA TRƯỜNG HỌ VÀ TÊN 
+				  Yêu cầu: Không được để trống; số từ phải từ 2 - 5 từ ---*/
+
+			var hoten = document.getElementById("txtHoten").value;
+			if(hoten==""){
+				document.getElementById("txtHoten").style = "border:1px solid red";
+				document.getElementById("msgHoten").innerHTML = "Họ tên không được để trống";
+				status = false;
+			}else{
+				hoten = hoten.replace(/\s+/g,' ');
+				var sotu = hoten.split(' ').length;
+				if(sotu<2 || sotu>5){
+					document.getElementById("txtHoten").style = "border:1px solid red";
+					document.getElementById("msgHoten").innerHTML = "Số từ của họ tên ít nhất 2 từ và nhiều nhất là 5";
+					status = false;
+				}else{
+					document.getElementById("txtHoten").style = "border:1px solid green";
+					document.getElementById("msgHoten").innerHTML = "";
+				}
+			}
+			
+			/*--KIỂM TRA TÍNH HỢP LỆ CỦA TRƯỜNG GIỚI TÍNH
+				Yêu cầu: Giới tính bắt buộc phải chọn--*/
+			var genders = document.getElementsByName("rbGender");
+			if(genders[0].checked == false && genders[1].checked == false){
+				document.getElementById("msgGioitinh").innerHTML = "Giới tính bắt buộc phải chọn";
+				status = false;
+			}else{
+				document.getElementById("msgGioitinh").innerHTML = "";
+			}
+
+
+			/*--KIỂM TRA TÍNH HỢP LỆ CỦA TRƯỜNG ĐỊA CHỈ
+				Yêu cầu: Địa chỉ bắt buộc phải nhập--*/
+			var address = document.getElementById("txtAddress").value;
+			if(address==""){
+				document.getElementById("txtAddress").style = "border:1px solid red";
+				document.getElementById("msgDiachi").innerHTML = "Địa chỉ không được để trống";
+				status = false;
+			}else{
+				document.getElementById("txtAddress").style = "border:1px solid green";
+				document.getElementById("msgDiachi").innerHTML = "";
+			}
+
+
+			/*--KIỂM TRA TÍNH HỢP LỆ CỦA TRƯỜNG SỐ ĐIỆN THOẠI
+				Yêu cầu: Không để trống; đúng định dạng số; độ dài là 10--*/
+			var phoneReg = /^0\d{9}$/;
+			var phone = document.getElementById("txtDt").value;
+			if(phone==""){
+				document.getElementById("txtDt").style = "border:1px solid red";
+				document.getElementById("msgDt").innerHTML = "Số điện thoại không được để trống";
+				status = false;
+			}else{
+				if(phoneReg.test(phone)==false){
+					document.getElementById("txtDt").style = "border:1px solid red";
+					document.getElementById("msgDt").innerHTML = "Sai định dạng số điện thoại";
+					status = false;
+				}else{
+					document.getElementById("txtDt").style = "border:1px solid green";
+					document.getElementById("msgDt").innerHTML = "";
+				}
+				
+			}
+
+
+			/*--KIỂM TRA TÍNH HỢP LỆ CỦA TRƯỜNG EMAIL
+				Yêu cầu: Không được để trống; đúng định dạng email--*/
+			var emailReg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+			var email = document.getElementById("txtEmail").value;
+			if(email==""){
+				document.getElementById("txtEmail").style = "border:1px solid red";
+				document.getElementById("msgEmail").innerHTML = "Email không được để trống";
+				status = false;
+			}else{
+				if(emailReg.test(email)==false){
+					document.getElementById("txtEmail").style = "border:1px solid red";
+					document.getElementById("msgEmail").innerHTML = "Sai định dạng Email";
+					status = false;
+				}else{
+					document.getElementById("txtEmail").style = "border:1px solid green";
+					document.getElementById("msgEmail").innerHTML = "";
+				}
+				
+			}
+
+
+			/*--KIỂM TRA TÍNH HỢP LỆ CỦA TRƯỜNG KHOÁ HỌC
+				Yêu cầu: Phải lựa chọn ít nhất một khoá học--*/
+			var course = document.getElementById('slKhoahoc');
+			var item = course.options[course.selectedIndex].value;
+			
+			if (item=="") {
+				document.getElementById('slKhoahoc').style = "border:1px solid red";
+				document.getElementById("msgKhoahoc").innerHTML = "Phải lựa chọn ít nhất một khoá học";
+				status = false;
+			}else{
+				document.getElementById('slKhoahoc').style = "border:1px solid green";
+				document.getElementById("msgKhoahoc").innerHTML = "";
+			}
+
+
+			/*--KIỂM TRA TÍNH HỢP LỆ CỦA TRƯỜNG GIỜ HỌC
+				Yêu cầu: 7.	Nếu chọn khóa học là Quản trị mạng mà chọn giờ học là D hoặc E thì thông báo chưa có giờ học D và E cho khóa Quản trị mạng--*/
+			
+
+			//Kiem tra gia tri cua bien 'status'
+			if(status==false){
+				return false;
+			}else{
+				return true;
+			}
+
+		}
+
+
+		function numericonly(){
+			if (event.keyCode>=48 && event.keyCode<=57) {
+				event.returnValue = true;
+			}else{
+				event.returnValue = false;
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<div class="container">
+		<form action="proccess.php" method="post" onsubmit="return formValid();">
+			<table class="table table-bordered">
+				<h1>Đăng ký khóa học</h1>
+				<tr>
+					<td>Họ và Tên (*)</td>
+					<td>
+						<input type="text" id="txtHoten" class="form-control">
+					</td>
+					<td>
+						<label for="" id="msgHoten"></label>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Giới tính (*)</td>
+					<td>
+						Nam <input type="radio" value="0" name="rbGender">
+						Nữ <input type="radio" value="1" name="rbGender">
+					</td>
+					<td>
+						<label id="msgGioitinh"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>Địa Chỉ (*)</td>
+					<td><textarea name="txtadr" id="txtAddress" cols="30" rows="3" class="form-control"></textarea></td>
+					<td>
+						<label id="msgDiachi"></label>
+					</td>
+				</tr>
+				<tr>
+					<td>Điện thoại (*)</td>
+					<td>
+						<input type="text" id="txtDt" onkeypress="numericonly();"  class="form-control">
+					</td>
+					<td>
+						<label for="" id="msgDt"></label>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Email(*)</td>
+					<td><input type="text" id="txtEmail" class="form-control"></td>
+					<td>
+						<label id="msgEmail"></label>
+					</td>
+				</tr>
+
+				<tr>
+					<td>Khóa học</td>
+					<td>
+						<select name="slKhoahoc" id="slKhoahoc" class="form-control">
+							<option value="">Mời chọn khóa học</option>
+							<option value="1">Lập trình ứng dụng</option>
+							<option value="2">Đồ họa đa phương tiện</option>
+							<option value="3">Quản trị mạng</option>
+						</select>
+					</td>
+					<td>
+						<label for="" id="msgKhoahoc"></label>
+					</td>
+				</tr>
+
+				<tr>
+					<td >Giờ học</td>
+					<td >
+						<input type="checkbox"> A (7h30-9h30) 
+						<input type="checkbox"> B (7h30-9h30) 
+						<input type="checkbox"> C (7h30-9h30)<hr>
+						<input type="checkbox"> D (7h30-9h30) 
+						<input type="checkbox"> E (7h30-9h30) 
+					</td>
+					<td>
+						<label for="" id="txtGiohoc"></label>
+					</td>
+				</tr>
+
+				<tr>
+						<td></td>
+						<td>
+							<input class="btn btn-info" type="submit" value="Register">
+							<input class="btn btn-danger" type="reset" value="Reset">
+						</td>
+						<td>
+							<label id="msgNgaysinh"></label>
+						</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

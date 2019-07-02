@@ -21,7 +21,7 @@
 
 		function formValid(){
 			var status = true;
-			//Lay gia tri tren cac truong trong Form
+
 			var u = document.getElementById("user").value;
 			if(u==""){
 				document.getElementById("user").style = "border:1px solid red";
@@ -31,6 +31,25 @@
 				if(userReg.test(u)==false){
 					document.getElementById("msgUser").innerHTML = "Ten dang nhap sai dinh dang";
 					status = false;	
+				}else{
+					document.getElementById("user").style = "border:1px solid green";
+					document.getElementById("msgUser").innerHTML = "";
+				}
+			}
+
+			var p = document.getElementById("phone").value;
+			
+			if(p==""){
+				document.getElementById("phone").style = "border:1px solid red";
+				document.getElementById("msgPhone").innerHTML = "sdt phai dien";
+				status = false;
+			}else{
+				if(phoneReg.test(p)==false){
+					document.getElementById("msgPhone").innerHTML = "sdt sai dinh dang";
+					status = false;	
+				}else{
+					document.getElementById("phone").style = "border:1px solid green";
+					document.getElementById("msgPhone").innerHTML = "";
 				}
 			}
 
@@ -43,9 +62,10 @@
 
 		}
 
+		
 	</script>
 </head>
-<body>
+<body oncontextmenu="return false">
 	<form action="proccess.php" method="post" onsubmit="return formValid();">
 	<table>
 		<tr>
@@ -59,7 +79,7 @@
 			<td><label id="msgPhone"></label></td>
 		</tr>
 		<tr>
-			<td>Ten dang nhap</td>
+			<td>Email</td>
 			<td><input type="text" name="txtEmail" id="email"></td>
 			<td><label id="msgEmail"></label></td>
 		</tr>
