@@ -7,6 +7,17 @@
 		label{
 			color: red;
 		}
+		table{
+			margin-left: 100px;
+			margin-top: 100px;
+			height: 300px;
+			background-color: #060;
+			width: 600px;
+			font-size: 24px;
+		}
+		input{
+			height: 24px;
+		}
 	</style>
 	<script type="text/javascript">
 		// teen ddawng nhap khong chuwa khoang trang
@@ -16,7 +27,6 @@
 	//dung dinh dang so dien thoai
 	var phoneReg=/^\d{10}/;
 	
-
 	//dung dinh dnag email
 	var emailReg=/^([a-zA-Z0-9_\.\-])+\@(([A-Za-z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 	//alert(emailReg.test("luuthithuoaikt99@gmail.c om"));
@@ -31,59 +41,81 @@
 		}
 		else{
 			if(userReg.test(u)==false){
-				status=false;;
+				document.getElementById("msgUser").innerHTML="Tên đăng nhập sai định dạng";
+				status=false;
+
+			}else{
+				document.getElementById("user").style="border:1px solid green;"
+				document.getElementById("msgUser").innerHTML="";
+				status=true;
 			}
 		}
 		var p=document.getElementById("phone").value;
 		if (p=="") {
 			document.getElementById("phone").style="border:1px solid red;"
+			document.getElementById("msgphone").innerHTML="Phải điền số điện thoại";
 			status=false;
 		}
 		else{
 			if(phoneReg.test(p)==false){
-				status=false;;
-			}
+				document.getElementById("msgphone").innerHTML="số điện thoại sai định dạng";
+				status=false;
+			}else{
+				document.getElementById("user").style="border:1px solid green;"
+				document.getElementById("msgUser").innerHTML="";}
 		}
 
 		var e=document.getElementById("email").value;
 		if (e=="") {
 			document.getElementById("email").style="border:1px solid red;"
+			document.getElementById("msgemail").innerHTML="Phải điền email";
 			status=false;
 		}
 		else{
 			if(emailReg.test(e)==false){
-				status=false;;
-			}
+				document.getElementById("msgemail").innerHTML="email sai định dạng";
+				status=false;
+			}else{
+				document.getElementById("user").style="border:1px solid green;"
+				document.getElementById("msgUser").innerHTML="";}
 		}
 
 		if(status==false)
 			return false;
 		else return true;
 	}
+	function myreset() {
+			document.getElementById("myform").reset();
+		}
 	</script>
 </head>
 <body>
-	<form action="proccess.php" method="post" onsubmit="return formvalid();">
+	<form id="myform" action="proccess.php" method="post" onsubmit="return formvalid();" >
 		<table>
 		<tr>
 			<td>Tên đăng nhập</td>
-			<td><input type="text" name="txtUser" id="user"></td>
+			<td><input type="text" name="txtUser" id="user" style="font-size: 20px;" placeholder="hãy nhập tên đăng nhập"></td>
 			<td><label for="" id="msgUser"></label></td>
 		</tr>
 		<tr>
-			<td>SỐ điện thoại</td>
-			<td><input type="text" name="txtPhone" id="phone"></td>
-			<td><label for="" id="msgUser"></label></td>
+			<td>Số điện thoại</td>
+			<td><input type="text" name="txtPhone" id="phone" style="font-size: 20px;" placeholder="hãy nhập sdt"></td>
+			<td><label id="msgphone"></label></td>
 		</tr>
 		<tr>
-			<td>email</td>
-			<td><input type="text" name="txtEmail" id="email"></td>
-			<td><label for="" id="msgUser"></label></td>
+			<td>Email</td>
+			<td><input type="text" name="txtEmail" id="email" style="font-size: 20px;" placeholder="hãy nhập email"></td>
+			<td><label id="msgemail"></label></td>
+		</tr>
+		<tr>
+			<td>Mật khẩu</td>
+			<td><input type="password" name="txtpass" id="ps" style="font-size: 20px;"></td>
 		</tr>
 		<tr>
 			<td></td>
+			<td><input type="submit" name="btnValid" value="kiểm tra" onclick="checkUser()"></td>
 			<td>
-				<input type="submit" name="btnValid" value="kiểm tra" onclick="checkUser();">
+				<input type="button" name="btnreset" value="reset" onclick="myreset()">
 			</td>
 		</tr>
 	</table>

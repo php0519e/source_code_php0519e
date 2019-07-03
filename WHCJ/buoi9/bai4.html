@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hoai</title>
+	<style type="text/css">
+		label{
+			margin-top: 10px;
+			width: 
+		}
+	</style>
+	<script type="text/javascript">
+
+		function numericonly() {
+			if(event.keyCode>=48&&event.keyCode<=57)
+				event.returnValue=true;
+			else event.returnValue=false;
+		}
+
+		function countword() {
+			var message=document.getElementById("txtMsgInput").value;
+			message=document.getElementById('txtMsgInput').value;
+			message=message.replace(/\s+/g,' ');
+			var numberofwords=message.split(' ').length;
+			document.getElementById('txtMessage').value="Word remaining: "+eval(49-numberofwords);
+
+			if(numberofwords>49)
+				alert('too many words.');
+		}
+	</script>
+</head>
+<body>
+
+	
+	<div>
+		<label for="">Mobile number</label>
+		<input type="text" name="txtMobile" id="txtMobNo" onkeypress="numericonly();">
+	</div>
+
+	<div>
+		<label>Message</label>
+		<input type="text" name="" id="txtMsgInput" onkeydown="countword()">
+	</div>
+
+	<div>
+		<label for="">Thông báo</label>
+		<input type="text" id="txtMessage">
+	</div>
+	<div>
+		<input type="submit" name="txtsubmit" value="Send SMS">
+		<input type="button" name="txtbt" value="clear">
+	</div>
+</body>
+</html>

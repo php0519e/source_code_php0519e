@@ -46,7 +46,7 @@
 		//var fullname = /^([A-Za-z]+\s)+([A-Za-z]){1,2}$/;
 		//var fullname = /^([A-Za-z])+(\s+[A-Za-z]){1,3}$/;
 		
-		 var fullname = /^([A-Za-z]+\s)+([A-Za-z]){1,3}$/;
+		var fullname = /^([A-Za-z]+\s)+([A-Za-z]){1,3}$/;
 		var emailReg=/^([a-zA-Z0-9_])+\@(([A-Za-z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		var phoneReg=/^\d{10}$/;
 		function myreset() {
@@ -58,6 +58,17 @@
 			var h=document.getElementById("hovaten").value;
 
 			// họ và tên k đc để trống
+			function countword() {
+			var message=document.getElementById("hovaten").value;
+			message=message.replace(/\s+/g,' ');
+			var numberofwords=message.split(' ').length;
+			if(numberofwords>5||numberofwords<2)
+				{document.getElementById("msgname").innerHTML="tên không phù hợp";
+				status=false;}
+				else{
+					document.getElementById("msgname").innerHTML="";
+				}
+			}
 			if(h=="")
 			{	document.getElementById("hovaten").style="border:1px solid red;"
 				status=false;
@@ -94,17 +105,16 @@
 			{
 				status=false;
 			}
-			function countword() {
-			var message=document.getElementById("hovaten").value;
-			message=message.replace(/\s+/g,' ');
-			var numberofwords=message.split(' ').length;
-			if(numberofwords>5||numberofwords<2)
-				{document.getElementById("msgname").innerHTML="tên không phù hợp";
-				status=false;}
-				else{
-					document.getElementById("msgname").innerHTML="";
-				}
-}
+
+			// kiểm tra tính hợp lệ đối với khóa học
+			var courses=document.getElementById("khoahoc");
+			var item=courses.options[courses.selectedIndex].value;
+			if(item=""){
+				document.getElementById("msgkhoahoc").innerHTML="phai chon it nhat mot khoa hoc";
+				status=false;
+			}else{
+				document.getElementById
+			}
 		if(status==false) return false
 			else return true;
 			}
@@ -112,49 +122,8 @@
 </head>
 
 <body>
-	<div class="menu1 container">
 
-		<div class="row">
-			<div class=" col2 logoarea col-md-2"> Logo Area</div>
-			<div class=" col10 col-md-10">
-				<div class="banner">Banner</div>
-				<div class="menu2">
-				<div class="row">
-					<div class="col-md-3" style="border-right: solid black; height: 80px;"><a href="#" style="color: white">Trang Chủ</a></div>
-					<div class="col-md-3" style="border-right: solid black; height: 80px;">
-						<ul>
-							<li class="likhoahoc"><a href="#" style="color: white">Khóa Học</a>
-								<ul class="khoahoc">
-									<li><a href="#">Lập trình ứng dụng</a></li>
-									<li><a href="#">Đồ họa đa phương tiện</a></li>
-									<li><a href="#">Quản trị mạng</a></li>
-								</ul>
-							</li>
-						</ul>
-				</div>
-					<div class="col-md-3" style="border-right: solid black; height: 80px;"><a href="#" style="color: white">Đăng kí</a></div>
-					<div class="col-md-3"><a href="#" style="color: white">Giới thiệu</a></div>
-				</div>
-			</div>
-			</div>
-		</div>
-		
-
-	</div>
-
-	<div class="menu3 container">
-		<div class="row">
-			<div class=" col-md-3" style="border-right: solid black; height: 600px; background-color:#090; color: yellow; padding: 0;">
-				<div style="height: 50px; border-bottom: solid black;">Lập trình ứng dụng</div>
-				<div style="height: 50px; border-bottom: solid black;"> đồ họa đa phương tiện</div>
-				<div style="height: 50px; border-bottom: solid black;">Quản trị mạng</div>
-			</div>
-			<div class="col-md-9">
-				<div style="height: 50px; color: #090; font-size: 24px;"><center>Đăng kí khóa học</center></div>
-
-
-
-				<form id="myform" action="process.php" method="post" onsubmit="return(formvalid())">
+		<form id="myform" action="process.php" method="post" onsubmit="return(formvalid())">
 					<table>
 						<tr>
 							<td>Họ và tên(*)</td>
@@ -181,7 +150,7 @@
 						</tr>
 						<tr>
 							<td>Khóa học</td>
-							<td><select name="khoahoc">
+							<td><select name="khoahoc" id="khoahoc">
 								<option value="">Mời chọn khóa học</option>
 								<option value="ltud">lập trình ứng dụng</option>
 								<option value="dhdpt">Đồ họa đa phương tiện</option>
@@ -208,9 +177,5 @@
 					</table>
 
 				</form>
-			</div>
-		</div>
-	</div>
-	
 </body>
 </html>
