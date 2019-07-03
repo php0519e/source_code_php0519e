@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		label{
+			width: 120px;
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+		input{
+			width: 300px;
+			line-height: 30px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function numbericonly(){
+			if (event.keyCode >=48 && event.keyCode<=57) {
+				event.returnValue = true;
+			}else{
+				event.returnValue = false;
+			}
+		}
+
+		function countword(){
+			var tinnhan = document.getElementById("txtMsgInput").value;
+			tinnhan = tinnhan.replace(/\s+/g, ' ');
+			var sotu = tinnhan.split(' ').length;
+
+			document.getElementById("txtMessage").value = "So tu con lai duoc phep go la: "+ eval(6-sotu);
+
+			if(sotu>=5){
+				alert("Vuot qua so luong tu theo quy dinh");
+			}
+
+		}
+
+	</script>
+
+</head>
+<body>
+	<label>So dien thoai</label>
+	<input type="text" id="txtMobile" onkeypress="numbericonly();"><br>
+
+	<label>Tin nhan</label>
+	<textarea id="txtMsgInput" cols="100" rows="5" onkeydown="countword();"></textarea><br>
+
+	<label>Thong bao</label>
+	<input type="text" id="txtMessage">
+</body>
+</html>
+
+
+
+
+
+
+
+
