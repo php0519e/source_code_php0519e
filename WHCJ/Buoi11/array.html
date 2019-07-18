@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array trong JS</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//C1: Cau truc khai bao mang
+		var name = new Array(5);
+
+		//Gan gia tri cho cac phan tu
+		// name.push("Tom");
+
+		//C2: Cau truc khai bao mang va khoi tao gia tri cho cac phan tu
+		var name1 = new Array("Cam","Mit","Buoi","Dua","Chuoi");
+
+		//Hoac cach dung khac cuar C2
+		var name2 = ["Cam","Mit","Buoi","Dua","Chuoi"];
+
+		//HIEN THI CAC PHAN TU TRONG 3 MANG TREN
+		//hien thi cac phan tu trong mang name1
+		document.write("Cac phan tu trong mang name1 la:");
+		for(var i=0; i<name1.length; i++)
+		{
+			document.write(name1[i]+ ", ");
+		}
+
+		//Cau truc tao mang 2 chieu (mang cua mang trong JS)
+		var sv = new Array(3);
+		sv[0] = new Array("Hung",20);
+		sv[1] = new Array("Tuan",22);
+		sv[2] = new Array("Nam",19);
+
+		document.write("<table border='1'><tr><td>Ho va ten</td><td>Tuoi</td></tr>");
+		for(var i=0; i<sv.length; i++){
+			document.write("<tr><td>"+sv[i][0]+"</td><td>"+sv[i][1]+"</td></tr>");
+		}
+		document.write("</table>");
+
+
+		//Cach hien thi thu 2
+		document.write("<table border='1'><tr><td>Ho va ten</td><td>Tuoi</td></tr>");
+
+		sv.forEach(function(item,index){
+			document.write("<tr><td>"+item[0]+"</td><td>"+item[1]+"</td></tr>");
+		});
+
+		document.write("</table>");
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		//Tạo đối tượng theo phương pháp template
+		function Student(_first,_last,_age)
+		{
+			//Khai báo thuộc tính cho
+			this.first_name		= _first;
+			this.last_name		= _last;
+			this.age 			= _age;
+		}
+
+
+		//Sử dụng đối tượng đã tạo ra thông qua gọi Constructor function (Hàm khởi tạo)
+		var stu = new Student("Tho","Pham",33);
+
+		//Tạo phương thức cho đối tượng
+		stu.display = function(gender){
+			document.write("Fullname: "+ stu.first_name + " "+ stu.last_name+ " Age: "+stu.age+ "; Gender: "+gender);
+		};
+
+		//Gọi phương thức 'display' để hiển thị kết quả
+		stu.display("Nam");
+
+		var fullname = "Pham Ngoc Tho";
+		var fullname1 = new String("Pham Ngoc Tho");
+		
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
