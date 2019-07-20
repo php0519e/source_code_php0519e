@@ -2,64 +2,110 @@
 <html>
 <head>
 	<title>JS</title>
-	<script type="text/Javascript">
+	<style type="text/css">
+		label{
+			color: red;
+		}
+	</style>
+
+</head>
+<body>
+	<form action="proccess.php" method="post" onsubmit="return formvalid();">
+		<table>
+			<tr>
+				<td>Tên đăng nhập</td>
+				<td><input type="text" name="txtuser" id="user"></td>
+				<td><label id="msgUser"></label></td>
+			</tr>
+			<tr>
+				<td>Số điện thoại</td>
+				<td><input type="text" name="txtphone" id="phone"></td>
+				<td><label id="msgPhone"></label></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="txtEmail" id="email"></td>
+				<td><label id="msgEmail"></label></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" name="btnValid" value="Kiểm tra">
+				</td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
 		//tên đăng nhập không chứa khoảng trắng
-		var userReg = /^\S[a-zA-Z0-9_]{5,10}$/;
-		// var str = userRed.test("nguyen")
-		// alert(str);
-		// alert(userReg.test("nguyen"));
+		var userReg = /^[a-zA-Z0-9]{5,10}$/;
 		//đúng định dạng số điện thoại
-		var moReg = /^0\d{9}$/;
-		// alert(moReg.test("0984327975"));
+		var phoneReg = /^0\d{9}$/;
 		//đúng định dạng email
-		var emailReg = /^([a-zA-Z0-9_\.\-])+\@([a-zA-Z0-9_\-])+\.([a-zA-Z0-9_]){2,4}+$/;
-		// var str = emailReg.test("nguyen")
-		// alert(str);
+		var emailReg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		
 		function formvalid(){
-			status = true;
+			var status = true;
 			//lấy giá trị trên các trường trong form
 			var u = document.getElementById("user").value;
 			if(u==""){
-				//alert("Yêu cầu nhập dữ liệu");
 				document.getElementById("user").style = "border:1px solid red";
-				document.getElementById("msuser").innerHTMl = "Tên đăng nhập không được bỏ trống";
+				document.getElementById("msgUser").innerHTML = "Tên đăng nhập không được bỏ trống";
 				status = false;
 			}else{
-				if (userReg.test(u)==false) {
-					//alert("tên đăng nhập sai");
-					document.getElementById("msuser").innerHTMl = "Tên đăng nhập sai";
+				if (userReg.test(u)==false){
+					document.getElementById("msgUser").innerHTML = "Tên đăng nhập sai";
 					status = false;
+				}else{
+					if (userReg.test(u)==true){
+						document.getElementById("user").style="border:1px solid green";
+						document.getElementById("msgUser").innerHTML="";
 					}
+				}
 			}
-			//kiểm tra giá trị của biến status
-			if(status==false){
-				return false;
+			
+			//kiểm tra định dạng sdt
+			
+			var p = document.getElementById("phone").value;
+			if (p==""){
+				document.getElementById("phone").style = "border: 1px solid red";
+				document.getElementById("msgPhone").innerHTML = "Số điện thoại không được bỏ trống";
+				status = false;
 			}else{
+				if (phoneReg.test(p)==false) {
+					document.getElementById("msgPhone").innerHTML = "Số điện thoại sai";
+					status = false;
+				}else{
+					if (phoneReg.test(p)==true){
+						document.getElementById("phone").style="border:1px solid green";
+						document.getElementById("msgPhone").innerHTML="";
+					}
+				}
+			}
+			
+			//kiểm tra định dạng email
+		
+			var e = document.getElementById("email").value;
+			if (e==""){
+				document.getElementById("email").style = "border: 1px solid red";
+				document.getElementById("msgEmail").innerHTML = "Email không được bỏ trống";
+				status = false;
+			}else{
+				if (emailReg.test(e)==false) {
+					document.getElementById("msgEmail").innerHTML = "Email sai";
+					status = false;
+				}else{
+					if (emailReg.test(e)==true){
+						document.getElementById("email").style="border:1px solid green";
+						document.getElementById("msgEmail").innerHTML="";
+					}
+				}
+			}
+			if (status==true) {
 				return true;
+			}else{
+				return false;
 			}
 		}
 	</script>
-</head>
-<body>
-	<form action="process.php" method="post" onsubmit=" return formvalid();">
-	<table>
-		<tr>
-			<td>Tên đăng nhập</td>
-			<td><input type="text" name="txtuser" id="user"></td>
-			<td><label id="msuser"></label></td>
-		</tr>
-		<tr>
-			<td>Số điện thoại</td>
-			<td><input type="text" name="txtphone" id="phone"></td>
-		</tr>
-		<tr>
-			<td>Email</td>
-			<td><input type="text" name="txtEmail" id="email"></td>
-		</tr>
-		<tr>
-			<td><input type="submit" name="btnValic" value="Kiểm tra"></td>
-		</tr>
-	</table>
-</form>
 </body>
 </html>

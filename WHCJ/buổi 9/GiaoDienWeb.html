@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BANNER AREA</title>
+	<style type="text/css" media="screen">
+		*{margin: 0;
+			padding: 0;}
+			#container{
+				width: 1000px;
+				height: 600px;
+				border: 5px solid black;
+				margin: 0 auto;
+			}
+			#header{
+				height: 110px;
+			}
+			#logo{
+				width: 220px;
+				height: 110px;
+				float: left;
+
+			}
+			#banner{
+				text-align: center;
+				height: 110px;
+				width: 780px;
+				float: left;
+				line-height: 80px;
+
+			}
+			#nameBanner{
+				height: 60px;
+			}
+			#menu{
+				height: 50px;
+				background: #666;
+				line-height: 50px;
+			}
+			#menu ul{
+				list-style-type: none;
+			}
+			#menu ul li{
+				background: #666;
+				display: inline-block;
+				position: relative;
+				
+				width: 150px;
+			}
+			#menu li> .menu1{
+				display: none;
+				position: absolute;
+			}
+			#menu li:hover .menu1{
+				display: block;
+				width: 100%;
+			}
+			#menu a{
+				display: block;
+				text-decoration: none;
+				color: #fff;
+			}
+			#menu a:hover{
+				background: #c6c6d2;
+				color: #666;
+				cursor: pointer;
+			}
+
+			#Body{
+
+			}
+			#LBody{
+				float:  left;
+
+				height: 490px;
+				width: 250px;
+				background: #090;
+				font-weight: bold;
+			}
+			#LBody ul{
+				list-style-type: none;
+			}
+			#LBody ul li{
+				height: 30px;
+
+				border: 1px solid black;
+			}
+			#LBody a{
+				text-decoration: none;
+				color: yellow;
+			}
+			#RBody{
+				float: left;
+
+				width: 740px;
+				height: 490px;
+
+			}
+			#RBody h3{
+				padding-top:5px; 
+				text-align: center;
+				color: #090;
+				font-size: 24px;
+				font-weight: bold;
+			}
+			#RBody label{
+				display: inline-block;
+				margin:10px;
+				width: 200px;
+			}
+			#RBody  .chkTime{
+				height: 30px;
+				line-height: 30px;
+			}
+			.chkTime{
+				float: left;
+			}
+			.button{
+				text-align: center;
+				padding-top: 30px;
+			}
+			.clear{
+				clear: both;
+			}
+		</style>
+		<script type="text/javascript">
+			var UserAddReg = /^\w\s/;
+			var UserPhoneReg = /^0\d{9}$/;
+			var UserEmailReg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+			function formValid(){
+					//Kiểm tra họ tên
+					var status = true;
+					var hoten=document.getElementById("UserName").value;
+					hoten=hoten.replace(/\s+/g,' ');
+					var numberofwords = hoten.split(' ').length;
+					if (numberofwords<2||numberofwords>5) {
+						status=false;
+						document.getElementById("msgName").innerHTML="Họ tên không thỏa mãn";
+					//kiểm tra địa chỉ
+					
+					var Add = document.getElementById("UserAdd").value;
+					if (Add=="") {
+						document.getElementById("UserAdd").style = "border:1px solid red";
+						document.getElementById("msgAdd").innerHTML = ="Địa chỉ không được bỏ trống";
+						status=false;
+					}else{
+						if (UserAddReg.test(Add)==false) {
+							document.getElementById("msgAdd").innerHTML = "Địa chỉ sai định dạng";
+							status=false;
+						}
+					}
+					//kiểm tra sđt
+
+					var phone = document.getElementById("UserPhone").value;
+					if (phone=="") {
+						document.getElementById("UserPhone").style = "border:1px solid red";
+						document.getElementById("msgPhone").innerHTML = "Số điện thoại không được bỏ trống";
+						status=false;
+					}else{
+						if (UserPhoneReg.test(phone)==false) {
+							document.getElementById("msgPhone").innerHTML = "Số điện thoại sai";
+							status=false;
+						}
+					}
+					//kiểm tra Email
+					
+					var email = document.getElementById("UserEmail").value;
+					if (email=="") {
+						document.getElementById("UserEmail").style = "border:1px solid red";
+						document.getElementById("msgEmail").innerHTML = "Email không được bỏ trống";
+						status=false;
+					}else{
+						if (UserEmailReg.test(email)==false) {
+							document.getElementById("msgEmail").innerHTML = "Email sai";
+							status=false;
+						}
+					}
+					//kiểm tra biến status
+					if (status==true) {
+						return true;
+					}else{
+						return false;
+					}
+				}
+			</script>
+		</head>
+		<body>
+			<div id="container">
+				<div id="header">
+					<div id="logo">
+						<img src="#" alt="LOGO AREA">
+					</div>
+					<div id="banner">
+						<div id="nameBanner">
+							<h1>BANNER AREA</h1>
+						</div>
+						<div id="menu">
+							<ul>
+								<li><a href="#">Trang chủ</a></li>
+								<li>
+									<a href="#">Khóa học</a>
+									<ul class="menu1">
+										<li><a href="#" >Lập trình ứng dụng</a></li>
+										<li><a href="#" >Đồ họa đa phương tiện</a></li>
+										<li><a href="#" >Quản trị mạng</a></li>
+									</ul>
+								</li>
+								<li><a href="#">Đăng kí</a></li>
+								<li><a href="#">Giới thiệu</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="clear">
+
+					</div>
+				</div>
+				<div id="Body">
+					<div id="LBody">
+						<ul>
+							<li><a href="#">Lập trình ứng dụng</a></li>
+							<li><a href="#">Đồ họa đa phương tiện</a></li>
+							<li><a href="#">Quản trị mạng</a></li>
+						</ul>
+					</div>
+					<div id="RBody">
+						<form action="process.php" method="post" onsubmit="return formValid();">
+							<h3> Đăng kí khóa học</h3>
+							<label>Họ tên(*)</label>
+							<input type="text" name="txtName" id="UserName" /><label id="msgName"></label><br />
+							<label>Giới tính(*)</label>
+							<input type="radio" name="rbGender" checked="true" value="nam" />Nam
+							<input type="radio" name="rbGender" value="nu" />Nữ<br />
+							<label>Địa chỉ(*)</label>
+							<input type="text" name="txtAdress" id="UserAdd" /><label id="msgAdd"></label><br />
+							<label>Điện thoại</label>
+							<input type="text" name="txtPhone" id="UserPhone" /><label id="msgPhone"></label><br />
+							<label>Email(*)</label>
+							<input type="text" name="txtEmail" id="UserEmail" /><label id="msgEmail"></label><br />
+							<label>Khóa học</label>
+							<select>
+								<option value="0" selected="true">Mời chọn khóa học</option>
+								<option value="1">Lập trình ứng dụng</option>
+								<option value="2">Đồ họa đa phương tiện</option>
+								<option value="3">Quản trị mạng</option>
+							</select>
+							<br />
+							<label class="chkTime">Giờ học</label>
+							<div class="chkTime">
+								<input type="checkbox" name="chkTime" value="A" />A(7h30-9h30)
+								<input type="checkbox" name="chkTime" value="B" />B(9h45-11h45)
+								<input type="checkbox" name="chkTime" value="C" />C(13h30-15h30)<br />
+								<input type="checkbox" name="chkTime" value="D">D(13h45-17h45)
+								<input type="checkbox" name="chkTime" value="E">E(18h-21h)</div><br />
+								<div class="clear">
+
+								</div>
+								<div class="button">
+									<input type="submit" name="btnReg" value="Register" />
+									<input type="reset" name="btnRes" value="Reset" />
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</body>
+			</html>
