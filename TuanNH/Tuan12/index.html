@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tuần 11</title>
+	<style type="text/css">
+		.container {width: 90%; height: 400px; overflow: hidden; margin: 0px auto; padding-bottom: 40px;}
+	</style>
+	<script type="text/javascript">
+		var listImage = [];
+		listImage[0] = new Image(); listImage[0].src = "image1.jpg"; listImage[0].alt = "Image number 1";
+		listImage[1] = new Image(); listImage[1].src = "image2.jpg"; listImage[1].alt = "Image number 2";
+		listImage[2] = new Image(); listImage[2].src = "image3.jpg"; listImage[2].alt = "Image number 3";
+
+		function slideShow(index) {
+			document.areaImage.src = listImage[index].src;
+			index += 1;
+			if (index < listImage.length) {
+				document.areaImage.setAttribute("data-index-image", index);
+				window.setTimeout(function () {
+					slideShow(index);
+				}, 5000);
+			} else {
+				index = 0;
+				document.areaImage.setAttribute("data-index-image", index);
+				window.setTimeout(function () {
+					slideShow(index);
+				}, 5000);
+			}
+		}
+
+		function nextImage() {
+			var index = document.areaImage.getAttribute('data-index-image');
+			var nextInd = parseInt(index) + 1;
+			document.areaImage.src = listImage[nextInd].src;
+			document.areaImage.alt = listImage[nextInd].alt;
+			document.areaImage.setAttribute('data-index-image', nextInd);
+		}
+	</script>
+</head>
+<body onload="slideShow(0)">
+	<div class="container">
+		<img src="image1.jpg" alt="Image number 1" name="areaImage" data-index-image="0"/>
+	</div>
+	<button id="next" onclick="nextImage();">Next</button><button id="perious" onclick="periousImage();">Perious</button>
+</body>
+</html>

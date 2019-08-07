@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bài kiểm tra số 1</title>
+	<style type="text/css">
+		* {margin: 0px; padding: 0px;}
+		.container {width: 90%; margin: 0px auto;}
+		.fleft {float: left;}
+		.fright {float: right;}
+		.clearfix {clear: both;}
+		.message {color: red;}
+		
+		/* Style for Header */
+		.header_left {width: 25%;}
+		.header_left span.logo {text-align: center; font-size: 26px; line-height: 80px;} 
+
+		.header_right {width: 75%;}
+		.header_right h1.banner{text-align: center; margin: 0px auto; line-height: 50px;}
+		
+		.main-menu {background-color: #666;}
+		ul#menu {list-style: none; padding: 0px; margin: 0px;}
+		ul#menu li {display: inline-block; width: 24%; box-sizing: border-box;}
+		ul#menu li a {text-decoration: none; color: white; font-size: 14px; font-weight: bold; padding: 5% 2%; display: block; box-sizing: border-box; text-align: center;}
+		
+		/* Style for content */
+		.content-left {width: 30%;}
+		ul#sub-menu {background-color: #33CC33; padding: 0px; margin: 0px; list-style: none;}
+		ul#sub-menu li {display: block;}
+		ul#sub-menu li a {text-decoration: none; padding: 1% 2%; display: block; color: black;}
+
+		.content-right {width: 68%; padding: 0% 1%;}
+		h3#caption-form {color: #090; font-weight: bold; font-size: 24px; text-align: center; padding: 10px 0px; margin: 0px;}
+		.form-group {width: 100%; display: block;}
+		.col-label {width: 30%; margin: 5px 0px;}
+		.col-control {width: 70%; margin: 5px 0px;}
+	</style>
+	<script type="text/javascript">
+		function validateForm() {
+			/* Validate Họ Tên */
+			var checkHoTen = true;
+			var hoTen = document.getElementById("txtHoTen").value;
+			var messageHoten = document.getElementById("mesHoten");
+			if (hoTen == "") {
+				messageHoten.innerHTML = "Họ tên không được để trống";
+				checkHoTen = false;
+			} else {
+				hoTen = hoTen.trim();
+				var splitHoten = hoTen.split(" ");
+				var regHoten = /[a-zA-Z]/;
+				var checkDauCach = true;
+				for (var i = 0; i < splitHoten.length; i++) {
+					if (splitHoten[i] == "" || splitHoten[i] == " ") {
+						checkDauCach = false;
+						break;
+					}
+				}
+				debugger;
+				if (checkDauCach == false) {
+					messageHoten.innerHTML = "Họ tên chưa đúng định dạng, mỗi từ cách nhau chỉ một dấu cách";
+					checkHoTen = false;
+				} else if (splitHoten.length > 5 || splitHoten.length < 2){
+					messageHoten.innerHTML = "Họ tên phải gồm từ 2 đến 5 từ";
+					checkHoTen = false;
+				} else if (!regHoten.test(hoTen)) {
+					messageHoten.innerHTML = "Họ tên chỉ được nhập chữ";
+					checkHoTen = false;
+				} else {
+					messageHoten.innerHTML = '';
+				}
+			}
+
+			/* Validate Giới Tính */
+			var checkGioiTinh = true;
+			var gioiTinh = document.getElementsByName("rdGioiTinh");
+			var messageGioitinh = document.getElementById("mesGioiTinh");
+			if (!gioiTinh[0].checked && !gioiTinh[1].checked) {
+				messageGioitinh.innerHTML = "Hãy chọn giới tính";
+				checkGioiTinh = false;
+			} else {
+				messageGioitinh.innerHTML = "";
+			}
+
+			/* Validate địa chỉ */
+			var checkDiaChi = true;
+			var diaChi = document.getElementById("txtDiaChi").value;
+			var messageDiaChi = document.getElementById("mesDiaChi");
+			if (diaChi == "") {
+				messageDiaChi.innerHTML = "Hãy điền địa chỉ";
+				checkDiaChi = false;
+			} else {
+				messageDiaChi.innerHTML = '';
+			}
+
+			/* Validate dien thoai */
+			var checkDienThoai = true;
+			var dienThoai = document.getElementById("txtDienThoai").value;
+			var messageDienThoai = document.getElementById("mesDienThoai");
+			if (dienThoai == "") {
+				messageDienThoai.innerHTML = "Hãy điền số điện thoại";
+				checkDienThoai = false;
+			} else {
+				messageDiaChi.innerHTML = '';
+			}
+
+			/* Validate Email */
+			var checkEmail = true;
+			var email = document.getElementById("txtEmail").value;
+			var messageEmail = document.getElementById("mesEmail");
+			var regEmail = /^([a-zA-Z0-9_\.])+\@+([a-zA-Z0-9]{2,4})+\.+([a-zA-Z0-9]{2,4})$/;
+
+			if (email == "") {
+				messageEmail.innerHTML = "Hãy điền email";
+				checkEmail = false;
+			} else if (!regEmail.test(email)) {
+				messageEmail.innerHTML = "Email sai định dạng";
+				checkEmail = false;
+			} else {
+				messageEmail.innerHTML = '';
+			}
+
+			/* Validate tour */
+			var checkTour = true;
+			var tour = document.getElementsByName("cbChonTour[]");
+			var messageTour = document.getElementById("mesTour");
+			if (!tour[0].checked && !tour[1].checked && !tour[2].checked) {
+				messageTour.innerHTML = "Hãy chọn ít nhất 1 tour";
+				checkTour = false;
+			} else {
+				mesTour.innerHTML = '';
+			}
+
+			/* Validate Phuong tiện*/
+			var checkPhuongTien = true;
+			var phuongTien = document.getElementById("slPhuongTien");
+			var messagePhuongTien = document.getElementById("mesPhuongTien");
+			if (phuongTien.selectedIndex == 0) {
+				messagePhuongTien.innerHTML = "Hãy chọn 1 trong 3 phương tiện";
+				checkPhuongTien = false;
+			} else {
+				messagePhuongTien.innerHTML = "";
+			}
+
+			/* validate ... 7 */
+			var checkSS = true;
+			var messageSS = document.getElementById("mesSS");
+			if (tour[0].checked || tour[1].checked) {
+				if (phuongTien.selectedIndex == 3) {
+					messageSS.innerHTML = "Tour Hạ Long và Sapa không có phương tiện là Máy bay";
+					checkSS = false;
+				} else {
+					messageSS.innerHTML = "";
+				}
+			} else {
+				messageSS.innerHTML = "";
+			}
+
+			if (checkHoTen && checkGioiTinh && checkDiaChi && checkDienThoai && checkEmail && checkTour && checkPhuongTien && checkSS) {
+				return true;
+			} else {
+				return false;				
+			}
+		}
+
+		function resetForm() {
+			document.getElementById("mesHoten").innerHTML = '';
+			document.getElementById("mesGioiTinh").innerHTML = '';
+			document.getElementById("mesDiaChi").innerHTML = '';
+			document.getElementById("mesDienThoai").innerHTML = '';
+			document.getElementById("mesEmail").innerHTML = '';
+			document.getElementById("mesTour").innerHTML = '';
+			document.getElementById("mesPhuongTien").innerHTML = '';
+			document.getElementById("mesThongTinKhac").innerHTML = '';
+		}
+	</script>
+</head>
+<body>
+<div class="container">
+	<div class="header">
+		<div class="header_left fleft">
+			<span class="logo">LOGO AREA</span>
+		</div>	
+		<div class="header_right fleft">
+			<div class="banner">
+				<h1 class="banner">BANNER AREA</h1>
+			</div>
+			<div class="main-menu">
+				<ul id="menu">
+					<li><a href="#">Trang chủ</a></li>
+					<li><a href="#">Đăng ký</a></li>
+					<li><a href="#">Hướng dẫn</a></li>
+					<li><a href="#">Giới thiệu</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	
+	<div class="content">
+		<div class="content-left fleft">
+			<ul id="sub-menu">
+				<li><a href="#">Du lịch Hạ Long</a></li>
+				<li><a href="#">Du lịch Sapa</a></li>
+				<li><a href="#">Du lịch Đà Lạt</a></li>
+			</ul>
+		</div>
+		<div class="content-right fleft">
+			<form action="http://itplus.edu.vn" method="POST" onsubmit="return validateForm();">
+				<h3 id="caption-form">Đăng kí tour du lịch</h3>
+				<div class="form-group">
+					<div class="col-label fleft">
+						<label for="txtHoTen">Họ Tên (*)</label>
+					</div>
+					<div class="col-control fleft">
+						<input type="text" name="txtHoTen" id="txtHoTen"> <br>
+						<span class="message" id="mesHoten"></span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-label fleft">
+						<label for="">Giới Tính (*)</label>
+					</div>
+					<div class="col-control fleft">
+						<input type="radio" name="rdGioiTinh" value="nam" id="rdNam"> <label for="rdNam">Name</label>
+						<input type="radio" name="rdGioiTinh" value="nu" id="rdNu"> <label for="rdNu">Nữ</label> <br>
+						<span class="message" id="mesGioiTinh"></span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-label fleft">
+						<label for="txtDiaChi">Địa Chỉ (*)</label>
+					</div>
+					<div class="col-control fleft">
+						<input type="text" name="txtDiaChi" id="txtDiaChi"> <br>
+						<span class="message" id="mesDiaChi"></span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-label fleft">
+						<label for="txtDienThoai">Điện Thoại (*)</label>
+					</div>
+					<div class="col-control fleft">
+						<input type="text" name="txtDienThoai" id="txtDienThoai"> <br>
+						<span class="message" id="mesDienThoai"></span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="form-group">
+					<div class="col-label fleft">
+						<label for="txtEmail">Email (*)</label>
+					</div>
+					<div class="col-control fleft">
+						<input type="text" name="txtEmail" id="txtEmail"> <br>
+						<span class="message" id="mesEmail"></span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-label fleft">
+						<label for="">Chọn Tour</label>
+					</div>
+					<div class="col-control fleft">
+						<input type="checkbox" name="cbChonTour[]" value="ha-long" id="cbHaLong"> <label for="cbHaLong">Hạ Long</label>
+						<input type="checkbox" name="cbChonTour[]" value="sa-pa" id="cbSapa"> <label for="cbSapa">Sapa</label>
+						<input type="checkbox" name="cbChonTour[]" value="da-lat" id="cbDaLat"> <label for="cbDaLat">Đà Lạt</label> <br>
+						<span class="message" id="mesTour"></span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-label fleft">
+						<label for="slPhuongTien">Phương Tiện</label>
+					</div>
+					<div class="col-control fleft">
+						<select id="slPhuongTien">
+							<option value="0">Chọn Phương Tiện</option>
+							<option value="1">Ô Tô</option>
+							<option value="2">Tàu Hỏa</option>
+							<option value="3">Máy Bay</option>
+						</select> <br>
+						<span class="message" id="mesPhuongTien"></span><br>
+						<span class="message" id="mesSS"></span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-label fleft">
+						<label for="txtThongTinKhac">Thông Tin Khác</label>
+					</div>
+					<div class="col-control fleft">
+						<input type="text" name="txtThongTinKhac" id="txtThongTinKhac" > <br>
+						<span class="message" id="mesThongTinKhac"></span>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-label fleft">
+						
+					</div>
+					<div class="col-control fleft">
+						<input type="submit" name="btn-dangky" id="btn-dangky" value="Đăng Ký">
+						<input type="reset" name="btn-nhaplai" id="btn-nhaplai" value="Nhập lại" onclick="resetForm();">
+					</div>
+					<div class="clearfix"></div>
+				</div>				
+			</form>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+</div>
+</body>
+</html>

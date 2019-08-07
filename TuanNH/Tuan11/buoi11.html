@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Try !!!</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<style type="text/css">
+		.container {width: 90%; margin: 0px auto;}
+		.img__right {margin: 10px 0px;}
+		.img__left {margin: 10px 0px;}
+		.form-title h1 {color: red;}
+		.txtDOB {max-width: 100px;}
+	</style>
+	<script type="text/javascript">
+		function validateForm() {
+			
+			return false;
+		}
+	</script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="left col-sm-3">
+			<div class="img__left">
+				<img src="left.jpg" alt="Image in left"  class=" img-thumbnail"/>	
+			</div>
+		</div>
+
+		<div class="content col-sm-6">
+			<div class="form-title">
+				<h1>THAM GIA CLB</h1>
+				<p>Quý độc giả hãy điền đầy đủ thông tin để tham gia phát triển Câu lạc bộ ngày càng vững mạnh hơn.</p>
+			</div>
+			<div class="form-content">
+				<form action="process.php" method="POST" onsubmit="return validateForm();">
+					<table class="table table-bordered">
+						<tr>
+							<td><label for="txtHoTen">Họ và tên : </label></td>
+							<td>
+								<input type="text" class="form-control" id="txtHoTen">
+							</td>
+						</tr>
+						<tr>
+							<td><label for="txtDiaChi">Địa chỉ : </label></td>
+							<td>
+								<input type="text" class="form-control" id="txtDiaChi">
+							</td>
+						</tr>
+						<tr>
+							<td><label for="txtEmail">Email : </label></td>
+							<td><input type="text" class="form-control" id="txtEmail"></td>
+						</tr>
+						<tr>
+							<td><label for="txtDienThoai">Điện thoại : </label></td>
+							<td><input type="text" class="form-control" id="txtDienThoai"></td>
+						</tr>
+						<tr>
+							<td><label for="txtNgaySinh"> Ngày sinh : </label></td>
+							<td>
+								<input type="text" id="txtNgaySinh" class="txtDOB"> / 
+								<input type="text" id="txtThánginh" class="txtDOB"> / 
+								<input type="text" id="txtNamSinh" class="txtDOB">
+							</td>
+						</tr>
+						<tr>
+							<td><label for="slDeTai">Đề tài : </label></td>
+							<td>
+								<select class="custom-select" id="slDeTai">
+									<option value="1">Tìm hiểu Sứa biển</option>
+									<option value="2">Tìm hiểu Bạn gái</option>
+									<option value="3">Tìm hiểu Lập trình</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="">Nhóm : </label></td>
+							<td>
+								<input type="radio" name="rnhom" value="nghien-cuu" id="rNghienCuu">
+									<label for="rNghienCuu"> Nghiên cứu </label><br>
+								<input type="radio" name="rnhom" value="hai-ngu" id="rHaiNgu">
+									<label for="rHaiNgu"> Hải ngư </label><br>
+								<input type="radio" name="rnhom" value="vien-duong" id="rVienDuong">
+									<label for="rVienDuong"> Viễn dương </label><br>
+								<input type="radio" name="rnhom" value="thuc-pham" id="rThucPham">
+									<label for="rThucPham"> Thực phẩm </label><br>
+								<input type="radio" name="rnhom" value="sinh-vien" id="rSinhVien">
+									<label for="rSinhVien"> Sinh viên</label><br>
+							</td>
+						</tr>
+						<tr>
+							<td><label for="fHinh">Gửi hình : </label></td>
+							<td>
+								<input type="file" name="fHinh" class="">
+							</td>
+						</tr>
+
+						<tr>
+							<td><label for="">Tài liệu : </label></td>
+							<td>
+								<input type="checkbox" name="cbTaiLieu[]" value="tailieu1"> Tài liệu 1 <br>
+								<input type="checkbox" name="cbTaiLieu[]" value="tailieu2"> Tài liệu 2 <br>
+								<input type="checkbox" name="cbTaiLieu[]" value="tailieu3"> Tài liệu 3 <br>
+								<input type="checkbox" name="cbTaiLieu[]" value="tailieu4"> Tài liệu 4 <br>
+								<input type="checkbox" name="cbTaiLieu[]" value="tailieu5"> Tài liệu 5 <br>
+							</td>
+						</tr>
+
+						<tr>
+							<td></td>
+							<td>
+								<button type="submit" class="btn btn-primary">Submit</button>
+								<button type="reset" class="btn btn-success">Reset</button>
+							</td>
+						</tr>
+					</table>
+
+				</form>
+			</div>
+		</div>
+
+		<div class="right col-sm-3">
+			<div class="img__right">
+				<img src="right.jpeg" align="Image in right" class="img-thumbnail"/>
+			</div>
+			<div class="img__right">
+				<img src="right.jpeg" align="Image in right" class="img-thumbnail"/>
+			</div>
+			<div class="img__right">
+				<img src="right.jpeg" align="Image in right" class="img-thumbnail"/>
+			</div>
+			<div class="img__right">
+				<img src="right.jpeg" align="Image in right" class="img-thumbnail"/>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

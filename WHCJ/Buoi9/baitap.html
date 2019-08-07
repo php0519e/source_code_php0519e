@@ -117,7 +117,27 @@
 
 			/*--KIỂM TRA TÍNH HỢP LỆ CỦA TRƯỜNG GIỜ HỌC
 				Yêu cầu: 7.	Nếu chọn khóa học là Quản trị mạng mà chọn giờ học là D hoặc E thì thông báo chưa có giờ học D và E cho khóa Quản trị mạng--*/
-			
+			var giohoc = document.getElementsByName("chkGh[]");
+			if(item == 3){
+				if(giohoc[3].checked == true){
+					document.getElementById("txtGiohoc").innerHTML = "Khong co gio hoc D trong khoa Quan tri mang";
+					status = false;
+				}
+
+				if(giohoc[4].checked == true){
+					document.getElementById("txtGiohoc").innerHTML = "Khong co gio hoc E trong khoa Quan tri mang";
+					status = false;
+				}
+
+				if(giohoc[3].checked == true && giohoc[4].checked == true){
+					document.getElementById("txtGiohoc").innerHTML = "Khong co gio hoc D va E trong khoa quan tri mang";
+					status = false;
+				}
+			}else{
+				document.getElementById("txtGiohoc").innerHTML = "";
+			}
+
+
 
 			//Kiem tra gia tri cua bien 'status'
 			if(status==false){
@@ -207,11 +227,11 @@
 				<tr>
 					<td >Giờ học</td>
 					<td >
-						<input type="checkbox"> A (7h30-9h30) 
-						<input type="checkbox"> B (7h30-9h30) 
-						<input type="checkbox"> C (7h30-9h30)<hr>
-						<input type="checkbox"> D (7h30-9h30) 
-						<input type="checkbox"> E (7h30-9h30) 
+						<input type="checkbox" name="chkGh[]" value="1"> A (7h30-9h30) 
+						<input type="checkbox" name="chkGh[]" value="2"> B (7h30-9h30) 
+						<input type="checkbox" name="chkGh[]" value="3"> C (7h30-9h30)<hr>
+						<input type="checkbox" name="chkGh[]" value="4"> D (7h30-9h30) 
+						<input type="checkbox" name="chkGh[]" value="5"> E (7h30-9h30) 
 					</td>
 					<td>
 						<label for="" id="txtGiohoc"></label>
