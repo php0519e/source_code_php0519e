@@ -1,0 +1,22 @@
+*{margin: 0px; padding: 0px;}
+#content .product{
+	padding: 10px;
+	float: left;
+	margin-bottom: 20px;
+}
+#content .product:hover{
+	-webkit-box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 7px 10px 5px 0px rgba(0,0,0,0.75);
+}
+
+#content .product .img{
+
+}
+
+#content .product .name a{
+	text-decoration: none;
+}
+#content .product .name a:hover{
+	text-decoration: underline;
+}
