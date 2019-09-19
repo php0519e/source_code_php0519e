@@ -1,8 +1,7 @@
 <?php
 require_once("controllers/base_controller.php");
-/**
- * 
- */
+require_once("models/customer.php");
+
 class CustomerController extends BaseController
 {
 	
@@ -32,10 +31,32 @@ class CustomerController extends BaseController
 		}
 	}
 
-	public function signin(){}
+	public function signin(){
+		$this->render("signin");
+	}
+
+	public function proccess_signin(){
+		if(isset($_POST['signin'])){
+			$u = $_POST['user'];
+			$p = $_POST['pass'];
+
+			//Kiểm tra sự tồn tại của tài khoản dưới CSDL
+			if(Customer::checkSignin($u, $p)==1){
+				$_SESSION['customer'] = $u;
+				$_SESSION['logged_in'] = true;
+				header("location:".PATH);
+			}else{
+				$_SESSION['message'] = "Đăng nhập thất bại";
+				header("location:".PATH."?controller=customer&action=signin");
+			}
+		}
+	}
 
 	public function profile(){}
 
 	public function ordermanagement(){}
 }
 ?>
+
+
+

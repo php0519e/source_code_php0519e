@@ -3,7 +3,7 @@
 $controllers = array(
 	'product'	=> ['index','detail'],
 	'page'		=> ['index', 'error'],
-	'customer'	=> ['signup','signin','profile','ordermanagement','proccess_signup']
+	'customer'	=> ['signup','signin','profile','ordermanagement','proccess_signup','proccess_signin']
 );
 
 // echo "<pre>";

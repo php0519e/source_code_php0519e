@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "database.php";
 define('PATH', 'http://localhost/itplus/php0519E/mvc/');
 
