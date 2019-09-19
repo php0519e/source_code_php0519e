@@ -6,6 +6,7 @@ class ProductController extends BaseController{
 
 	public function __construct(){
 		$this->folder = "product";
+		unset($_SESSION['admin_status']);
 	}
 
 	public function index(){

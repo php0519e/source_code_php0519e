@@ -8,6 +8,7 @@ class CustomerController extends BaseController
 	public function __construct()
 	{
 		$this->folder = "customer";
+		unset($_SESSION['admin_status']);
 	}
 
 	public function signup(){
@@ -50,6 +51,12 @@ class CustomerController extends BaseController
 				header("location:".PATH."?controller=customer&action=signin");
 			}
 		}
+	}
+
+	public function signout(){
+		unset($_SESSION['customer']);
+		$_SESSION['logged_in'] = false;
+		header("location:".PATH);
 	}
 
 	public function profile(){}

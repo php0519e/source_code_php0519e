@@ -12,7 +12,14 @@ class BaseController
 			require_once($view_file);
 			$content = ob_get_clean();
 
-			require_once('views/layout/template_user.php');
+			if(isset($_SESSION['admin_status'])){
+				require_once('views/layout/template_admin.php');
+			}else{
+				unset($_SESSION['admin_status']);
+				require_once('views/layout/template_user.php');
+				
+			}
+			
 		}else{
 			header("location:?controller=page&action=error");
 		}

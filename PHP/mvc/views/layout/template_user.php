@@ -22,8 +22,18 @@
 			<img src="<?php echo PATH.'assests/images/logo.png'; ?>" width="200px">
 		</a>
 		
+		<?php
+		if(isset($_SESSION['customer']) && $_SESSION['logged_in']==true){
+			echo "Xin chào: ". $_SESSION['customer'];
+			echo "<a href='".PATH."?controller=customer&action=signout'>Thoát</a>";
+		}else{
+		?>
 		<a href="<?php echo PATH.'?controller=customer&action=signup'?>">Đăng ký</a> | 
 		<a href="<?php echo PATH.'?controller=customer&action=signin'?>">Đăng nhập</a>
+		<?php
+		}
+		?>
+
 	</div>
 
 
